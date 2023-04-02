@@ -1,0 +1,110 @@
+@page "/c_carro"
+
+@inject CarroBLL carroBLL
+
+<EditForm Model="carroBLL">
+    <div class="card">    
+    
+        <div class="card-header">
+            <h4>Consulta Auto
+                  <div class="oi oi-people"></div>
+            </h4>
+        </div>
+  
+       <div class="card-body">
+            <form>
+                <div class="input-group d-flex align-items-end">
+
+                  <div class="form-group col-md-3">
+                  <InputSelect class="form-select text-14" @bind-Value="Filtro">                                
+                        <option value="0">Id</option>
+                        <option value="1">Marca</option>
+                    </InputSelect>
+                    </div>
+               <div class="Form-group col-md-1"></div>
+    
+                   <div class="Form-group col-3" >
+                        <label>Criterio</label>
+                        <InputText class="form-control" @bind-Value="Criterio" placeholder="Ingrese el criterio de busqueda"  />
+                    </div>
+
+                    <button type="button" class="btn btn-success" @onclick="Consultar">
+                        <i class="oi oi-grid-four-up mr-2" /> Consultar
+                    </button>                   
+                </div>
+            </form>
+        </div>
+    
+         <table class="table table-light table-striped table-bordered">
+            <thead class="thead">
+                <tr class="table">
+
+                    <th>Carro ID</th>
+                    <th>Marca</th>
+                    <th>Color</th>    
+                    <th>Motor</th>  
+                    <th>Año</th>  
+                    <th>Precio</th>   
+                    <th>Lugar</th>                    
+                </tr>
+            </thead>
+          <tbody>
+                @foreach (var item in Lcarro)
+                {
+                    <tr>
+                        <td>@item.CarroId</td>                      
+                        <td>@item.Marca</td>                      
+                        <td>@item.Color</td>
+                        <td>@item.Motor</td>
+                        <td>@item.Anio</td>
+                        <td>@item.Precio</td>
+                        <td>@item.Lugar</td>
+                    </tr>                   
+                }          
+            </tbody>         
+        </table>
+ </div>
+</EditForm>
+
+@code{
+    
+    #nullable disable 
+    public string Filtro;
+    public string Criterio;
+    public List<Carro> Lcarro { get; set; } = new List<Carro>();
+    public Carro carro { get; set; } = new Carro();    
+    bool listado = false;
+
+
+  protected override void OnInitialized()
+    {
+        Filtro = "0";
+        Lcarro = carroBLL.GetList(e => true);
+    }
+    private void Consultar()
+    {
+        Lcarro = new List<Carro>();
+        carro = new Carro();
+
+        if (Criterio != null)
+        {
+            switch (Filtro)
+            {
+                case "0": 
+                    
+
+                        Lcarro = carroBLL.GetList(e => e.CarroId == int.Parse(Criterio));
+                
+                    break;
+
+                case "1": 
+                   
+                    
+                        Lcarro = carroBLL.GetList(p => p.Marca.ToLower().Contains(Criterio.ToLower()));
+                  
+                    break;
+                
+            }
+        }
+    }
+}

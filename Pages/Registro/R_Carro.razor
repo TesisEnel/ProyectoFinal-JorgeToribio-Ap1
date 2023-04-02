@@ -1,0 +1,190 @@
+@page "/carro"
+@page "/Carro/{carroId:int}"
+@inject CarroBLL carroBLL
+@inject NotificationService notification
+
+<EditForm Model="carro" OnValidSubmit="Guardar">
+    <DataAnnotationsValidator />
+
+    <div class="accordion-item">
+        <div class="modal-header">
+            <h1>Registro de Carro</h1>
+        </div>
+
+        <div class="accordion-body">
+            <div class="col-md-15">
+                <label for="CarroId">CarroId</label>
+                <div class="input-group">
+                    <InputNumber @bind-Value="carro.CarroId" class="form-control" />
+                    <button type="button" class="btn btn-primary" @onclick="Buscar"><span class="oi oi-magnifying-glass"></span></button>
+                </div>
+            </div>
+
+            <div class="col-md-15">
+                <label for="Modelo" class="form-label">Modelo</label>
+                <InputText @bind-Value="carro.Modelo" class="form-control" id="Modelo" />
+                <ValidationMessage For="@(() => carro.Modelo)" />
+            </div>
+
+            <div class="col-md-15">
+                <label for="Marca">Marca</label>
+                <InputText @bind-Value="carro.Marca" class="form-control" />
+                <ValidationMessage For="@(() => carro.Marca)" />
+            </div>
+
+            <div class="col-md-15">
+                <label for="Color">Color</label>
+                <InputText @bind-Value="carro.Color" class="form-control" />
+                <ValidationMessage For="@(() => carro.Color)" />
+            </div>
+
+            <div class="col-md-15">
+                <label for="Motor">Motor</label>
+                <InputText @bind-Value="carro.Motor" class="form-control" />
+                <ValidationMessage For="@(() => carro.Motor)" />
+            </div>
+
+            <div class="col-md-15">
+                <label for="Anio">Año</label>
+                <InputNumber @bind-Value="carro.Anio" class="form-control" />
+                <ValidationMessage For="@(() => carro.Anio)" />
+            </div>
+
+            <div class="col-md-15">
+                <label for="Precio">Precio</label>
+                <InputNumber @bind-Value="carro.Precio" class="form-control" />
+                <ValidationMessage For="@(() => carro.Precio)" />
+            </div>
+
+            <div class="col-md-15">
+                <label for="Lugar">Lugar</label>
+                <InputText @bind-Value="carro.Lugar" class="form-control" />
+                <ValidationMessage For="@(() => carro.Lugar)" />
+            </div>
+
+        </div>
+
+        <div class="accordion-flush">
+            <button type="button" class="btn btn-primary" @onclick="Nuevo"><span class="oi oi-file"></span> Nuevo</button>
+            <button type="submit" class="btn btn-success"><span class="oi oi-document"></span> Guardar</button>
+            <button type="button" class="btn btn-danger" @onclick="Eliminar"><span class="oi oi-delete"></span> Eliminar</button>
+        </div>
+    </div>
+</EditForm>
+@code {
+    [Parameter]
+    public int carroId {get; set; }
+
+    public Carro carro {get; set; } = new Carro();
+
+    protected override void OnInitialized()
+    {
+        if(carroId > 0)
+        {
+            this.carro.CarroId = carroId;
+            this.Buscar();
+        }
+    } 
+    private void Buscar()
+    {
+        if (carro.CarroId > 0)
+        {
+            ShowNotification(
+                new NotificationMessage
+                    {
+                        Severity = NotificationSeverity.Success,
+                        Summary = "Se ha encontrado con éxito."
+                    });
+
+            var encontrado = carroBLL.Buscar(carro.CarroId);
+            Nuevo();
+            if (encontrado != null)
+                this.carro = encontrado;
+
+        }
+    }
+
+    public void Nuevo()
+    {
+        this.carro = new Carro();
+    }
+
+    public void Guardar()
+    {
+        if (ValidateCarro())
+        {
+            var guardado = carroBLL.Guardar(carro);
+
+            if (guardado)
+            {
+                ShowNotification(
+                    new NotificationMessage
+                        {
+                            Severity = NotificationSeverity.Success,
+                            Summary = "Guardado con éxito."
+                        });
+                Nuevo();
+            }
+            else
+            {
+                ShowNotification(
+                    new NotificationMessage
+                        {
+                            Severity = NotificationSeverity.Error,
+                            Summary = "ERROR!!. Favor revisar los campos."
+                        });
+                Nuevo(); 
+            }
+        }
+    }
+
+    public void Eliminar()
+    {
+        if(carroBLL.Eliminar(carro))
+        {
+            ShowNotification(
+                new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Success,
+                    Summary = "No hay nada para eliminar"
+                });
+
+            Nuevo();
+        }
+        else
+        {
+            ShowNotification(
+                new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Error,
+                    Summary = "Error"
+                });
+        }
+    }
+
+    public bool ValidateCarro()
+    {
+        var validationResults = new List<ValidationResult>();
+        var validationContext = new ValidationContext(carro);
+
+        if (!Validator.TryValidateObject(carro, validationContext, validationResults, true))
+        {
+            foreach (var validationResult in validationResults)
+            {
+                ShowNotification(
+                    new NotificationMessage
+                    {
+                        Severity = NotificationSeverity.Error,
+                        Summary = validationResult.ErrorMessage
+                    });
+            }
+            return false;
+        }
+        return true;
+    }
+
+    public void ShowNotification(NotificationMessage message)
+    {
+        notification.Notify(message);
+    }
+}
