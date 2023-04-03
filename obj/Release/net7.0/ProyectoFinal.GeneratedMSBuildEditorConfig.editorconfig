@@ -1,0 +1,85 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ProyectoFinal
+build_property.RootNamespace = ProyectoFinal
+build_property.ProjectDir = C:\Users\Jorge\OneDrive\Documentos\Archivos\7 trimestre\PROGRAMACION APLICADA I\ProyectoFinal\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Jorge\OneDrive\Documentos\Archivos\7 trimestre\PROGRAMACION APLICADA I\ProyectoFinal
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Jorge/OneDrive/Documentos/Archivos/7 trimestre/PROGRAMACION APLICADA I/ProyectoFinal/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jorge/OneDrive/Documentos/Archivos/7 trimestre/PROGRAMACION APLICADA I/ProyectoFinal/Pages/Consulta/C_carro.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29uc3VsdGFcQ19jYXJyby5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jorge/OneDrive/Documentos/Archivos/7 trimestre/PROGRAMACION APLICADA I/ProyectoFinal/Pages/Consulta/C_cliente.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29uc3VsdGFcQ19jbGllbnRlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jorge/OneDrive/Documentos/Archivos/7 trimestre/PROGRAMACION APLICADA I/ProyectoFinal/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jorge/OneDrive/Documentos/Archivos/7 trimestre/PROGRAMACION APLICADA I/ProyectoFinal/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jorge/OneDrive/Documentos/Archivos/7 trimestre/PROGRAMACION APLICADA I/ProyectoFinal/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jorge/OneDrive/Documentos/Archivos/7 trimestre/PROGRAMACION APLICADA I/ProyectoFinal/Pages/Registro/R_Carro.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cm9cUl9DYXJyby5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jorge/OneDrive/Documentos/Archivos/7 trimestre/PROGRAMACION APLICADA I/ProyectoFinal/Pages/Registro/R_Cliente.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cm9cUl9DbGllbnRlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jorge/OneDrive/Documentos/Archivos/7 trimestre/PROGRAMACION APLICADA I/ProyectoFinal/Shared/LoginDisplay.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXExvZ2luRGlzcGxheS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jorge/OneDrive/Documentos/Archivos/7 trimestre/PROGRAMACION APLICADA I/ProyectoFinal/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jorge/OneDrive/Documentos/Archivos/7 trimestre/PROGRAMACION APLICADA I/ProyectoFinal/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jorge/OneDrive/Documentos/Archivos/7 trimestre/PROGRAMACION APLICADA I/ProyectoFinal/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-06hfg8a6sd
+
+[C:/Users/Jorge/OneDrive/Documentos/Archivos/7 trimestre/PROGRAMACION APLICADA I/ProyectoFinal/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-fx6gbz8hvx
+
+[C:/Users/Jorge/OneDrive/Documentos/Archivos/7 trimestre/PROGRAMACION APLICADA I/ProyectoFinal/Areas/Identity/Pages/Account/LogOut.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dPdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jorge/OneDrive/Documentos/Archivos/7 trimestre/PROGRAMACION APLICADA I/ProyectoFinal/Areas/Identity/Pages/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jorge/OneDrive/Documentos/Archivos/7 trimestre/PROGRAMACION APLICADA I/ProyectoFinal/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jorge/OneDrive/Documentos/Archivos/7 trimestre/PROGRAMACION APLICADA I/ProyectoFinal/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

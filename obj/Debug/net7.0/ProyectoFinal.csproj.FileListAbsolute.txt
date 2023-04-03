@@ -80,3 +80,15 @@ C:\Users\Jorge Toribio\Documents\Archivos\7 trimestre\PROGRAMACION APLICADA I\Pr
 C:\Users\Jorge Toribio\Documents\Archivos\7 trimestre\PROGRAMACION APLICADA I\ProyectoFinal\obj\Debug\net7.0\ref\ProyectoFinal.dll
 C:\Users\Jorge Toribio\Documents\Archivos\7 trimestre\PROGRAMACION APLICADA I\ProyectoFinal\bin\Debug\net7.0\Radzen.Blazor.dll
 C:\Users\Jorge Toribio\Documents\Archivos\7 trimestre\PROGRAMACION APLICADA I\ProyectoFinal\bin\Debug\net7.0\System.Linq.Dynamic.Core.dll
+C:\Users\Jorge\OneDrive\Documentos\Archivos\7 trimestre\PROGRAMACION APLICADA I\ProyectoFinal\obj\Debug\net7.0\ProyectoFinal.csproj.AssemblyReference.cache
+C:\Users\Jorge\OneDrive\Documentos\Archivos\7 trimestre\PROGRAMACION APLICADA I\ProyectoFinal\obj\Debug\net7.0\ProyectoFinal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jorge\OneDrive\Documentos\Archivos\7 trimestre\PROGRAMACION APLICADA I\ProyectoFinal\obj\Debug\net7.0\ProyectoFinal.AssemblyInfoInputs.cache
+C:\Users\Jorge\OneDrive\Documentos\Archivos\7 trimestre\PROGRAMACION APLICADA I\ProyectoFinal\obj\Debug\net7.0\ProyectoFinal.AssemblyInfo.cs
+C:\Users\Jorge\OneDrive\Documentos\Archivos\7 trimestre\PROGRAMACION APLICADA I\ProyectoFinal\obj\Debug\net7.0\ProyectoFinal.csproj.CoreCompileInputs.cache
+C:\Users\Jorge\OneDrive\Documentos\Archivos\7 trimestre\PROGRAMACION APLICADA I\ProyectoFinal\obj\Debug\net7.0\ProyectoFinal.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Jorge\OneDrive\Documentos\Archivos\7 trimestre\PROGRAMACION APLICADA I\ProyectoFinal\obj\Debug\net7.0\ProyectoFinal.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Jorge\OneDrive\Documentos\Archivos\7 trimestre\PROGRAMACION APLICADA I\ProyectoFinal\obj\Debug\net7.0\ProyectoFinal.RazorAssemblyInfo.cache
+C:\Users\Jorge\OneDrive\Documentos\Archivos\7 trimestre\PROGRAMACION APLICADA I\ProyectoFinal\obj\Debug\net7.0\ProyectoFinal.RazorAssemblyInfo.cs
+C:\Users\Jorge\OneDrive\Documentos\Archivos\7 trimestre\PROGRAMACION APLICADA I\ProyectoFinal\obj\Debug\net7.0\ProyectoFinal.dll
+C:\Users\Jorge\OneDrive\Documentos\Archivos\7 trimestre\PROGRAMACION APLICADA I\ProyectoFinal\obj\Debug\net7.0\refint\ProyectoFinal.dll
+C:\Users\Jorge\OneDrive\Documentos\Archivos\7 trimestre\PROGRAMACION APLICADA I\ProyectoFinal\obj\Debug\net7.0\ProyectoFinal.pdb
