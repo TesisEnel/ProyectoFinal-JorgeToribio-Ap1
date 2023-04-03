@@ -8,4 +8,6 @@ public class VentaDetalle
     public int CarroId { get; set; }
     public int ClienteId { get; set; }
     public int Cantidad { get; set; }
+    public double Monto { get; set; }
+    public double Precio { get; set; }
 }

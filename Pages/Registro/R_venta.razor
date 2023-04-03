@@ -19,7 +19,7 @@
                 <label for="VentaId">VentaId</label>
                 <div class="input-group">
                     <InputNumber @bind-Value="venta.VentaId" class="form-control" />
-                    <button type="button" class="btn btn-primary" @onclick="Buscar"><span class="oi oi-magnifying-glass"></span></button>
+                    <button type="button" class="btn btn-outline-primary" @onclick="Buscar"><span class="oi oi-magnifying-glass"></span></button>
                 </div>
 
 @*Concepto de la venta*@
@@ -37,6 +37,10 @@
             </div>
 
 
+        <div class="modal-header">
+            <h2>Detalle de la venta</h2>
+        </div>
+
             @*Detalle*@
         <div class="col-md-15">
             <label for="select" class="form-label">Cliente:</label>
@@ -49,7 +53,7 @@
         </div>
     
         <div class="col-md-15">
-            <label for="select" class="form-label">Carro:</label>
+            <label for="select" class="form-label">Vehiculo:</label>
                     <InputSelect class="form-select" @bind-Value="Detalle.CarroId">
                         @foreach (Carro item in carroBLL.GetList(o => true))
                         {
@@ -57,20 +61,57 @@
                         }
                     </InputSelect>
         </div>
+    @*Precio del carro*@
+        <div class="col-md-15">
+            <label for="select" class="form-label">Precio del vehiculo:</label>
+                    <InputSelect class="form-select" @bind-Value="Detalle.Precio">
+                        @foreach (Carro item in carroBLL.GetList(o => true))
+                        {
+                            <option value="@item.Precio">@item.Precio</option>
+                        }
+                    </InputSelect>
+        </div>
+
+        @*Monto a pagar*@
+            <div class="col-md-15">
+                <label for="Monto" class="form-label">Monto a pagar</label>
+                <InputNumber @bind-Value="Detalle.Monto" class="form-control"/>
+            </div>
+    <br>
+        <div class="text-center">
+     <button type="button"class="btn btn-dark" @onclick="AgregarDetalle" ><span class="oi oi-plus"></span> AGREGAR</button>
+    </div>
+    <br>
+
+      <div class="table">
+             <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Cliente</th>
+                            <th>Vehiculo</th>
+                            <th>Monto</th>
+                            <th>Precio</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+
+                </table>
+            </div>
 
             </div>
         </div>
 
 
 @*Botones*@
-
-        <div class="accordion-flush">
-            <button type="button" class="btn btn-primary" @onclick="Nuevo"><span class="oi oi-file"></span> Nuevo</button>
-            <button type="submit" class="btn btn-success"><span class="oi oi-document"></span> Guardar</button>
-            <button type="button" class="btn btn-danger" @onclick="Eliminar"><span class="oi oi-delete"></span> Eliminar</button>
+<hr>
+        <div class="text-center">
+            <button type="button" class="btn btn-outline-primary" @onclick="Nuevo"><span class="oi oi-file"></span> Nuevo</button>
+            <button type="submit" class="btn btn-outline-success"><span class="oi oi-document"></span> Guardar</button>
+            <button type="button" class="btn btn-outline-danger" @onclick="Eliminar"><span class="oi oi-delete"></span> Eliminar</button>
         </div>
     </div>
 </EditForm>
+
 @code {
     [Parameter]
     public int ventaId {get; set; }

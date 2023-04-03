@@ -132,6 +132,12 @@ namespace ProyectoFinal.Migrations
                     b.Property<string>("Descripcion")
                         .HasColumnType("TEXT");
 
+                    b.Property<double>("Monto")
+                        .HasColumnType("REAL");
+
+                    b.Property<double>("Precio")
+                        .HasColumnType("REAL");
+
                     b.Property<int?>("VentaId")
                         .HasColumnType("INTEGER");
 

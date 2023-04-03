@@ -41,11 +41,14 @@
 
                     <th>Carro ID</th>
                     <th>Marca</th>
+                    <th>Modelo</th>                  
                     <th>Color</th>    
                     <th>Motor</th>  
                     <th>Año</th>  
                     <th>Precio</th>   
-                    <th>Lugar</th>                    
+                    <th>Lugar</th> 
+                    <th>Existencia</th> 
+              
                 </tr>
             </thead>
           <tbody>
@@ -53,12 +56,14 @@
                 {
                     <tr>
                         <td>@item.CarroId</td>                      
-                        <td>@item.Marca</td>                      
+                        <td>@item.Marca</td>   
+                        <td>@item.Modelo</td>   
                         <td>@item.Color</td>
                         <td>@item.Motor</td>
                         <td>@item.Anio</td>
                         <td>@item.Precio</td>
                         <td>@item.Lugar</td>
+                        <td>@item.Existencia</td>
                     </tr>                   
                 }          
             </tbody>         

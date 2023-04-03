@@ -75,6 +75,8 @@ namespace ProyectoFinal.Migrations
                     CarroId = table.Column<int>(type: "INTEGER", nullable: false),
                     ClienteId = table.Column<int>(type: "INTEGER", nullable: false),
                     Cantidad = table.Column<int>(type: "INTEGER", nullable: false),
+                    Monto = table.Column<double>(type: "REAL", nullable: false),
+                    Precio = table.Column<double>(type: "REAL", nullable: false),
                     VentaId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
