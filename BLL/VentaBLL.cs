@@ -10,19 +10,21 @@ public class VentaBLL{
     public bool Existe(int ventaId) {
         return _Contexto.Venta.Any(o => o.VentaId == ventaId);
     }
-
+    
     private bool Insertar(Venta venta) {
+       InsertarDetalle(venta);
         _Contexto.Venta.Add(venta);
         return _Contexto.SaveChanges() > 0;
     }
 
   private bool Modificar(Venta venta) {
-    var VentaExistente = _Contexto.Venta.Find(venta.VentaId);
-    if (VentaExistente == null) {
+    ModificarDetalle(venta);
+    var VentaExistencia = _Contexto.Venta.Find(venta.VentaId);
+    if (VentaExistencia == null) {
         return false;
     }
 
-    _Contexto.Entry(VentaExistente).CurrentValues.SetValues(venta);
+    _Contexto.Entry(VentaExistencia).CurrentValues.SetValues(venta);
     return _Contexto.SaveChanges() > 0;
 }
 
@@ -35,15 +37,34 @@ public class VentaBLL{
    }
 }
 
-  public bool Eliminar(Venta venta) {
-    if (Existe(venta.VentaId)) {
-      var VentaEliminacion = _Contexto.Venta.Find(venta.VentaId);
-      _Contexto.Entry(VentaEliminacion).State = EntityState.Deleted;
-      return _Contexto.SaveChanges() > 0;
-    } else {
-      return false;
+public bool Eliminar(int ventaId)
+{
+    var venta = _Contexto.Venta.Include(p => p.VentaDetalle).FirstOrDefault(p => p.VentaId == ventaId);
+
+    if (venta != null)
+    {
+        foreach (var detalle in venta.VentaDetalle)
+        {
+            var carro = _Contexto.Carro.Find(detalle.CarroId);
+            if (carro == null)
+            {
+                continue;
+            }
+            carro.Existencia += detalle.Cantidad;
+            _Contexto.Entry(carro).State = EntityState.Modified;
+        }
+
+        _Contexto.RemoveRange(venta.VentaDetalle);
+        _Contexto.Entry(venta).State = EntityState.Deleted;
+
+        int filasAfectadas = _Contexto.SaveChanges();
+        return filasAfectadas > 0;
     }
-  }
+    else
+    {
+        return false;
+    }
+}
 
     public Venta? Buscar(int ventaId){
         return _Contexto.Venta.Include(o => o.VentaDetalle).Where(o => o.VentaId == ventaId).SingleOrDefault();
@@ -52,6 +73,54 @@ public class VentaBLL{
     public List<Venta>GetList(Expression<Func<Venta, bool>> criterio){
         return _Contexto.Venta.AsNoTracking().Where(criterio).ToList();
     }  
+public void InsertarDetalle(Venta venta)
+{
+    if (venta.VentaDetalle?.Any() == true)
+    {
+        foreach (var item in venta.VentaDetalle)
+        {
+            var carro = _Contexto.Carro.Find(item.CarroId);
+
+            if (carro != null)
+            {
+                carro.Existencia -= item.Cantidad;
+                _Contexto.Entry(carro).State = EntityState.Modified;
+            }
+        }
+        _Contexto.SaveChanges();
+    }
+
+    var Pruducido = _Contexto.Carro.Find(venta.CarroId);
+        if (venta.Cantidad != 0 && Pruducido != null)
+        {
+            Pruducido.Existencia += venta.Cantidad;
+            _Contexto.Entry(Pruducido).State = EntityState.Modified;
+            _Contexto.SaveChanges();
+        }
+}
+
+public void ModificarDetalle(Venta venta)
+{
+    var Pruducido = _Contexto.Carro.Find(venta.VentaId);
+        if (venta.Cantidad != 0 && Pruducido != null)
+        {
+            Pruducido.Existencia += venta.Cantidad;
+            _Contexto.Entry(Pruducido).State = EntityState.Modified;
+            _Contexto.SaveChanges();
+        }
+
+    foreach (var detalle in venta.VentaDetalle)
+    {
+        var carro = _Contexto.Carro.FirstOrDefault(p => p.CarroId == detalle.CarroId);
+        if (carro != null)
+        {
+            carro.Existencia -= detalle.Cantidad;
+            _Contexto.Entry(carro).State = EntityState.Modified;
+        }
+    }
+    
+    _Contexto.SaveChanges();
+}
 
 
 }

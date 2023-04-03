@@ -10,6 +10,7 @@ public class Venta
     public int clienteId { get; set; }
     public int CarroId { get; set; }
     public double PrecioVenta { get; set; }
+    public int Cantidad { get; set; }
     
     [ForeignKey("VentaId")]
     public List<VentaDetalle> VentaDetalle { get; set; }

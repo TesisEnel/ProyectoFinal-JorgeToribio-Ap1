@@ -29,10 +29,6 @@ public class ClienteBLL {
 
 
   public bool Guardar(Cliente cliente) {
-    if (cliente == null || cliente.ClienteId <= 0) {
-      return false; // Libro no válido, no se puede guardar
-    }
-
     if (!Existe(cliente.ClienteId)) {
       return this.Insertar(cliente);
     } else {

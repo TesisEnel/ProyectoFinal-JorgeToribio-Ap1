@@ -1,0 +1,234 @@
+@page "/venta"
+@page "/Venta/{VentaId:int}"
+@inject VentaBLL ventaBLL
+@inject ClienteBLL clienteBLL
+@inject CarroBLL carroBLL
+@inject NotificationService notification
+
+<EditForm Model="venta" OnValidSubmit="Guardar">
+    <DataAnnotationsValidator />
+@*Registro de ventas*@
+    <div class="accordion-item">
+        <div class="modal-header">
+            <h1>Registro de ventas</h1>
+        </div>
+
+@*Ventas Id*@
+        <div class="accordion-body">
+            <div class="col-md-15">
+                <label for="VentaId">VentaId</label>
+                <div class="input-group">
+                    <InputNumber @bind-Value="venta.VentaId" class="form-control" />
+                    <button type="button" class="btn btn-primary" @onclick="Buscar"><span class="oi oi-magnifying-glass"></span></button>
+                </div>
+
+@*Concepto de la venta*@
+
+            <div class="col-md-15">
+                <label for="Concepto" class="form-label">Concepto </label>
+                <InputText @bind-Value="venta.Concepto" class="form-control"/>
+            </div>
+
+@*Fecha de la venta*@
+
+            <div class="col-md-15">
+                <label for="Fecha " class="form-label">Fecha</label>
+                <InputDate @bind-Value="venta.Fecha" class="form-control"/>
+            </div>
+
+
+            @*Detalle*@
+        <div class="col-md-15">
+            <label for="select" class="form-label">Cliente:</label>
+                    <InputSelect class="form-select" @bind-Value="Detalle.ClienteId">
+                        @foreach (Cliente item in clienteBLL.GetList(o => true))
+                        {
+                            <option value="@item.ClienteId">@item.ClienteId</option>
+                        }
+                    </InputSelect>
+        </div>
+    
+        <div class="col-md-15">
+            <label for="select" class="form-label">Carro:</label>
+                    <InputSelect class="form-select" @bind-Value="Detalle.CarroId">
+                        @foreach (Carro item in carroBLL.GetList(o => true))
+                        {
+                            <option value="@item.CarroId">@item.Modelo</option>
+                        }
+                    </InputSelect>
+        </div>
+
+            </div>
+        </div>
+
+
+@*Botones*@
+
+        <div class="accordion-flush">
+            <button type="button" class="btn btn-primary" @onclick="Nuevo"><span class="oi oi-file"></span> Nuevo</button>
+            <button type="submit" class="btn btn-success"><span class="oi oi-document"></span> Guardar</button>
+            <button type="button" class="btn btn-danger" @onclick="Eliminar"><span class="oi oi-delete"></span> Eliminar</button>
+        </div>
+    </div>
+</EditForm>
+@code {
+    [Parameter]
+    public int ventaId {get; set; }
+    public Carro carro { get; set; } = new Carro();
+    public Cliente cliente { get; set; } = new Cliente();
+    public VentaDetalle Detalle = new VentaDetalle();
+    public Venta venta {get; set; } = new Venta();
+
+    protected override void OnInitialized()
+    {
+        if(ventaId > 0)
+        {
+            this.venta.CarroId = ventaId;
+            this.Buscar();
+        }
+    } 
+    private void Buscar()
+    {
+        if (venta.VentaId > 0)
+        {
+            ShowNotification(
+                new NotificationMessage
+                    {
+                        Severity = NotificationSeverity.Success,
+                        Summary = "Se ha encontrado con éxito."
+                    });
+
+            Nuevo();
+            var encontrado = ventaBLL.Buscar(venta.VentaId);
+            if (encontrado != null)
+                this.venta = encontrado;
+
+        }
+    }
+
+    public void Nuevo()
+    {
+        this.venta = new Venta();
+    }
+
+    public void Guardar()
+    {
+        if (ValidarProducto())
+        {
+            var guardado = ventaBLL.Guardar(venta);
+
+            if (guardado)
+            {
+                ShowNotification(
+                    new NotificationMessage
+                        {
+                            Severity = NotificationSeverity.Success,
+                            Summary = "Guardado con éxito."
+                        });
+                Nuevo();
+            }
+            else
+            {
+                ShowNotification(
+                    new NotificationMessage
+                        {
+                            Severity = NotificationSeverity.Success,
+                            Summary = "Guardado con éxito."
+                        });
+                Nuevo(); 
+            }
+        }
+    }
+
+public void Eliminar()
+{
+    if (venta != null && venta.VentaId > 0)
+    {
+        if (ventaBLL.Eliminar(venta.VentaId))
+        {
+            ShowNotification(new NotificationMessage
+            {
+                Severity = NotificationSeverity.Success,
+                Summary = "Se ha eliminado con éxito."
+            });
+
+            Nuevo();
+        }
+        else
+        {
+            ShowNotification(new NotificationMessage
+            {
+                Severity = NotificationSeverity.Error,
+                Summary = "Error, no se pudo eliminar el elemento."
+            });
+        }
+    }
+    else
+    {
+        ShowNotification(new NotificationMessage
+        {
+            Severity = NotificationSeverity.Error,
+            Summary = "Error, no hay elementos para eliminar."
+        });
+    }
+}
+
+    public bool ValidarProducto()
+    {
+        if (!String.IsNullOrEmpty(venta.Concepto))
+        {
+            return true;
+        }
+        return false;
+    }
+    public void AgregarDetalle()
+    {
+        if (Detalle?.Cantidad > 0 && Detalle?.CarroId != null)
+        {
+            var carro = carroBLL.Buscar(Detalle.CarroId);
+            if(Detalle.Cantidad <= carro?.Existencia)
+            {
+                venta.VentaDetalle.Add(Detalle);               
+                venta.Cantidad += Detalle.Cantidad;               
+                Detalle = new VentaDetalle();
+            }
+            else
+            {
+                ShowNotification(
+                        new NotificationMessage
+                        {
+                            Severity = NotificationSeverity.Error,
+                            Summary = "Ha ocurrido un error al agregar al detalle.",
+                        } 
+                );
+            }
+
+
+        }
+    }
+    private void RemoverDetalle(VentaDetalle item) 
+    {
+
+        this.venta.VentaDetalle.Remove(item);
+
+    }
+    public void EliminarDetalle(int detalleId)
+    {
+        if (venta.VentaDetalle != null && detalleId > 0)
+        {
+            venta.VentaDetalle.RemoveAll(o => o.VentaDetalleId == detalleId);
+            ShowNotification(
+            new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Info,
+                    Summary = "Se ha eliminado con exito."
+                }
+            );
+        }
+    }
+
+    public void ShowNotification(NotificationMessage message)
+    {
+        notification.Notify(message);
+    }
+}

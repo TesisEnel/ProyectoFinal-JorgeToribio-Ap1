@@ -29,10 +29,6 @@ public class CarroBLL {
 
 
   public bool Guardar(Carro carro) {
-    if (carro == null || carro.CarroId <= 0) {
-      return false; // Libro no válido, no se puede guardar
-    }
-
     if (!Existe(carro.CarroId)) {
       return this.Insertar(carro);
     } else {

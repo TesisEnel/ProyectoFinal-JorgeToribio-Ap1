@@ -26,4 +26,8 @@ public class Carro
 
     [Required(ErrorMessage = "El lugar es requerido")]
     public string? Lugar { get; set; } 
+    
+    [Required(ErrorMessage = "El precio es requerido")]
+    [Range(0, 1000000, ErrorMessage = "El precio debe estar entre 0 y 1000000")]
+    public  int  Existencia { get; set; }
 }
