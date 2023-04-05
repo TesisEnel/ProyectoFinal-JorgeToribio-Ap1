@@ -68,37 +68,17 @@
         </div>
   </div>
 
-    @*Precio del carro*@
-     <div class="row">
-        <div class="col-md-6">
-            <label for="select" class="form-label">Precio del vehiculo:</label>
-                    <InputSelect class="form-select" @bind-Value="Detalle.Precio">
-                        @foreach (Carro item in carroBLL.GetList(o => true))
-                        {
-                            <option value="@item.Precio">@item.Precio</option>
-                        }
-                    </InputSelect>
-        </div>
-
-        @*Monto a pagar*@
-            <div class="col-md-6">
-                <label for="Monto" class="form-label">Monto a pagar</label>
-                <div class="input-group">
-                <InputNumber @bind-Value="Detalle.Monto" class="form-control"/>
-                <button type="button"class="btn btn-dark" @onclick="AgregarDetalle" ><span class="oi oi-plus"></span> AGREGAR</button>
-                </div>
-            </div>
-     </div>
     <br>
       <div class="table">
              <table class="table">
                     <thead>
                         <tr>
-                            <th>Cliente</th>
-                            <th>Vehiculo</th>
-                            <th>Monto</th>
-                            <th>Precio</th>
-                            <th>Total</th>
+                            <th>Mes</th>
+                            <th>Saldo inicial</th>
+                            <th>Cuota</th>
+                            <th>Inicial</th>
+                            <th>Amotizacion</th>
+                            <th>Saldo Final</th>
                         </tr>
                     </thead>
 
