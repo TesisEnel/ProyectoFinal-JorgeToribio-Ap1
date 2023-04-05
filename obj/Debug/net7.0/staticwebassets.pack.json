@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\ProyectoFinal.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\Images\\2022-ford-shelby-mustang-gt500-h-101-1658871334.jpg",
+      "PackagePath": "staticwebassets\\Images\\2022-ford-shelby-mustang-gt500-h-101-1658871334.jpg"
+    },
+    {
       "Id": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },
@@ -51,6 +55,10 @@
     {
       "Id": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\css\\styles.css",
+      "PackagePath": "staticwebassets\\css\\styles.css"
     },
     {
       "Id": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\favicon.png",

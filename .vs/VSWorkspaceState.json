@@ -1,9 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Areas",
+    "\\Areas\\Identity",
     "\\BLL",
     "\\Models"
   ],
-  "SelectedNode": "\\BLL\\CarroBLL.cs",
+  "SelectedNode": "\\Areas\\Identity",
   "PreviewInSolutionExplorer": false
 }

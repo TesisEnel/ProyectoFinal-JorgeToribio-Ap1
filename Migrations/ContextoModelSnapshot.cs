@@ -25,7 +25,18 @@ namespace ProyectoFinal.Migrations
                     b.Property<int>("Anio")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("CaantidadPasajeros")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Color")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Combustible")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Estado")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -49,6 +60,14 @@ namespace ProyectoFinal.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("Precio")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TipoVehiculo")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Transmision")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("CarroId");

@@ -27,10 +27,7 @@
                         <label>Criterio</label>
                         <InputText class="form-control" @bind-Value="Criterio" placeholder="Ingrese el criterio de busqueda"  />
                     </div>
-
-                    <button type="button" class="btn btn-success" @onclick="Consultar">
-                        <i class="oi oi-grid-four-up mr-2" /> Consultar
-                    </button>                   
+                    <button type="button" class="btn btn-outline-primary" @onclick="Consultar"><i class="oi oi-magnifying-glass" /></button>                   
                 </div>
             </form>
         </div>
@@ -86,29 +83,25 @@
         Filtro = "0";
         Lcarro = carroBLL.GetList(e => true);
     }
-    private void Consultar()
+    
+    public void Consultar()
     {
-        Lcarro = new List<Carro>();
-        carro = new Carro();
-
+        
         if (Criterio != null)
         {
             switch (Filtro)
             {
                 case "0": 
-                    
-
                         Lcarro = carroBLL.GetList(e => e.CarroId == int.Parse(Criterio));
                 
                     break;
 
                 case "1": 
-                   
                     
                         Lcarro = carroBLL.GetList(p => p.Marca.ToLower().Contains(Criterio.ToLower()));
-                  
                     break;
-                
+                default:
+                        Lcarro = carroBLL.GetList(o => true); break;
             }
         }
     }

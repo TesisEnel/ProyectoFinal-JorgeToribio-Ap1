@@ -130,8 +130,11 @@
     } 
     private void Buscar()
     {
-        if (venta.VentaId > 0)
+        var encontrado = ventaBLL.Buscar(venta.VentaId);
+
+        if (encontrado != null)
         {
+            venta = encontrado;
             ShowNotification(
                 new NotificationMessage
                     {
@@ -139,11 +142,14 @@
                         Summary = "Se ha encontrado con éxito."
                     });
 
-            Nuevo();
-            var encontrado = ventaBLL.Buscar(venta.VentaId);
-            if (encontrado != null)
-                this.venta = encontrado;
-
+        }
+        else{
+            ShowNotification(
+                new NotificationMessage
+                    {
+                        Severity = NotificationSeverity.Warning,
+                        Summary = "Error, verifique el Id."
+                    }); 
         }
     }
 

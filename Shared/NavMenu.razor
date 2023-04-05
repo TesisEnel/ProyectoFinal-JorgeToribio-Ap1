@@ -10,35 +10,29 @@
 <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
     <nav class="flex-column">
         <div class="nav-item px-3">
+            <span class="nav-link fw-bold">Registros</span>
+            <hr class="dropdown-divider" />
             <NavLink class="nav-link" href="carro" Match="NavLinkMatch.All">
                 <span class="oi oi-car" aria-hidden="true"></span> Registro Auto
             </NavLink>
+            <NavLink class="nav-link" href="cliente" Match="NavLinkMatch.All">
+                <span class="oi oi-person" aria-hidden="true"></span> Registro Cliente
+            </NavLink>
+            <NavLink class="nav-link" href="venta" Match="NavLinkMatch.All">
+                <span class="oi oi-dollar" aria-hidden="true"></span> Registro Ventas
+            </NavLink>
         </div>
         <div class="nav-item px-3">
+            <span class="nav-link fw-bold">Consultas</span>
+            <hr class="dropdown-divider" />
             <NavLink class="nav-link" href="c_carro" Match="NavLinkMatch.All">
                 <span class="oi oi-car" aria-hidden="true"></span> Consulta Auto
             </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="cliente" Match="NavLinkMatch.All">
-                <span class="oi oi-car" aria-hidden="true"></span> Registro Cliente
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
             <NavLink class="nav-link" href="c_cliente" Match="NavLinkMatch.All">
-                <span class="oi oi-car" aria-hidden="true"></span> Consulta Cliente
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="venta" Match="NavLinkMatch.All">
-                <span class="oi oi-car" aria-hidden="true"></span> Consulta Cliente
+                <span class="oi oi-person" aria-hidden="true"></span> Consulta Cliente
             </NavLink>
         </div>
     </nav>
-
-
-
 </div>
 
 @code {
