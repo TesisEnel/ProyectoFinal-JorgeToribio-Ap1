@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\Images\\2022-ford-shelby-mustang-gt500-h-101-1658871334.jpg"
     },
     {
+      "Id": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\Images\\fondos-de-pantalla-hd-bonitos.jpg",
+      "PackagePath": "staticwebassets\\Images\\fondos-de-pantalla-hd-bonitos.jpg"
+    },
+    {
       "Id": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },

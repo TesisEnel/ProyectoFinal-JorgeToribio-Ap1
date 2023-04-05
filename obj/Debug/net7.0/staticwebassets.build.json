@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wFXUIA4TqcKV9eJ4Vks8GTQkI2pw6G7+VmolwGtEEOg=",
+  "Hash": "Q5QMZKv7xWizhtG41ejRRe4/Tc9h7+JrQ0U9+YLLFdA=",
   "Source": "ProyectoFinal",
   "BasePath": "_content/ProyectoFinal",
   "Mode": "Default",
@@ -1885,6 +1885,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\2022-ford-shelby-mustang-gt500-h-101-1658871334.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\Images\\fondos-de-pantalla-hd-bonitos.jpg",
+      "SourceId": "ProyectoFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\",
+      "BasePath": "_content/ProyectoFinal",
+      "RelativePath": "Images/fondos-de-pantalla-hd-bonitos.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\fondos-de-pantalla-hd-bonitos.jpg"
     },
     {
       "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\toggleSidebar.js",

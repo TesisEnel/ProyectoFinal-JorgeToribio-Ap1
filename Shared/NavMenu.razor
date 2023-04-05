@@ -1,39 +1,55 @@
 ﻿<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">ProyectoFinal</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
     </div>
 </div>
 
 <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
     <nav class="flex-column">
         <div class="nav-item px-3">
-            <span class="nav-link fw-bold">Registros</span>
             <hr class="dropdown-divider" />
-            <NavLink class="nav-link" href="carro" Match="NavLinkMatch.All">
+            <NavLink class="nav-link" href="carro" Match="NavLinkMatch.All" style="display:none">
                 <span class="oi oi-car" aria-hidden="true"></span> Registro Auto
             </NavLink>
-            <NavLink class="nav-link" href="cliente" Match="NavLinkMatch.All">
+            
+            <NavLink class="nav-link" href="cliente" Match="NavLinkMatch.All" style="display:none">
                 <span class="oi oi-person" aria-hidden="true"></span> Registro Cliente
             </NavLink>
-            <NavLink class="nav-link" href="venta" Match="NavLinkMatch.All">
+            <NavLink class="nav-link" href="venta" Match="NavLinkMatch.All" style="display:none">
                 <span class="oi oi-dollar" aria-hidden="true"></span> Registro Ventas
             </NavLink>
         </div>
         <div class="nav-item px-3">
-            <span class="nav-link fw-bold">Consultas</span>
+            <span class="nav-link fw-bold" style="color: rgb(255, 255, 255);">Consultas</span>
             <hr class="dropdown-divider" />
-            <NavLink class="nav-link" href="c_carro" Match="NavLinkMatch.All">
+            <NavLink class="nav-link" href="c_carro" Match="NavLinkMatch.All" style="display:none">
                 <span class="oi oi-car" aria-hidden="true"></span> Consulta Auto
             </NavLink>
-            <NavLink class="nav-link" href="c_cliente" Match="NavLinkMatch.All">
+            <NavLink class="nav-link" href="c_cliente" Match="NavLinkMatch.All" style="display:none">
                 <span class="oi oi-person" aria-hidden="true"></span> Consulta Cliente
             </NavLink>
         </div>
     </nav>
 </div>
+
+
+
+<details>
+    <summary>Registros</summary>
+    <nav>
+        <a href="carro"><span class="oi oi-car" aria-hidden="true"></span> Registro Auto</a>
+        <a href="cliente"><span class="oi oi-person" aria-hidden="true"></span> Registro Cliente</a>
+        <a href="venta"><span class="oi oi-dollar" aria-hidden="true"></span> Registro Ventas</a>
+    </nav>
+</details>
+
+<details>
+    <summary>Consultas</summary>
+    <nav>
+        <a href="c_carro"><span class="oi oi-car" aria-hidden="true"></span> Consulta Auto</a>
+        <a href="c_cliente"><span class="oi oi-person" aria-hidden="true"></span> Consulta Cliente</a>
+    </nav>
+</details>
 
 @code {
     private bool collapseNavMenu = true;
