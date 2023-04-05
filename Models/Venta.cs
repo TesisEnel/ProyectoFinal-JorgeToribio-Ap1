@@ -6,7 +6,7 @@ public class Venta
     [Key]
     public int VentaId { get; set; }
     public string? Concepto { get; set; }
-    public DateTime Fecha { get; set; }
+    public DateOnly Fecha { get; set; } = DateOnly.FromDateTime(DateTime.Now);
     public int clienteId { get; set; }
     public int CarroId { get; set; }
     public double PrecioVenta { get; set; }

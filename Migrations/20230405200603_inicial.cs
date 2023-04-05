@@ -59,7 +59,7 @@ namespace ProyectoFinal.Migrations
                     VentaId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Concepto = table.Column<string>(type: "TEXT", nullable: true),
-                    Fecha = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Fecha = table.Column<DateOnly>(type: "TEXT", nullable: false),
                     clienteId = table.Column<int>(type: "INTEGER", nullable: false),
                     CarroId = table.Column<int>(type: "INTEGER", nullable: false),
                     PrecioVenta = table.Column<double>(type: "REAL", nullable: false),
