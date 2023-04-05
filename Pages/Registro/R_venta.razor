@@ -14,27 +14,31 @@
         </div>
 
 @*Ventas Id*@
-        <div class="accordion-body">
-            <div class="col-md-15">
+<div class="accordion-body">
+            <div class="col-md-6">
                 <label for="VentaId">VentaId</label>
                 <div class="input-group">
                     <InputNumber @bind-Value="venta.VentaId" class="form-control" />
-                    <button type="button" class="btn btn-outline-primary" @onclick="Buscar"><span class="oi oi-magnifying-glass"></span></button>
+                    <button type="button" class="btn btn-outline-primary" @onclick="Buscar">
+                        <span class="oi oi-magnifying-glass"></span>
+                    </button>
                 </div>
-
-@*Concepto de la venta*@
-
-            <div class="col-md-15">
-                <label for="Concepto" class="form-label">Concepto </label>
-                <InputText @bind-Value="venta.Concepto" class="form-control"/>
             </div>
+<br>
 
 @*Fecha de la venta*@
-
-            <div class="col-md-15">
+        <div class="row">
+            <div class="col-md-6">
                 <label for="Fecha " class="form-label">Fecha</label>
                 <InputDate @bind-Value="venta.Fecha" class="form-control"/>
             </div>
+
+           <div class="col-md-6">
+                <label for="Modelo" class="form-label">Modelo</label>
+                <InputText @bind-Value="carro.Modelo" class="form-control" id="Modelo" />
+                <ValidationMessage For="@(() => carro.Modelo)" />
+            </div>
+        </div>
 
 
         <div class="modal-header">
@@ -42,7 +46,8 @@
         </div>
 
             @*Detalle*@
-        <div class="col-md-15">
+    <div class="row">
+        <div class="col-md-6">
             <label for="select" class="form-label">Cliente:</label>
                     <InputSelect class="form-select" @bind-Value="Detalle.ClienteId">
                         @foreach (Cliente item in clienteBLL.GetList(o => true))
@@ -52,7 +57,7 @@
                     </InputSelect>
         </div>
     
-        <div class="col-md-15">
+        <div class="col-md-6">
             <label for="select" class="form-label">Vehiculo:</label>
                     <InputSelect class="form-select" @bind-Value="Detalle.CarroId">
                         @foreach (Carro item in carroBLL.GetList(o => true))
@@ -61,8 +66,11 @@
                         }
                     </InputSelect>
         </div>
+  </div>
+
     @*Precio del carro*@
-        <div class="col-md-15">
+     <div class="row">
+        <div class="col-md-6">
             <label for="select" class="form-label">Precio del vehiculo:</label>
                     <InputSelect class="form-select" @bind-Value="Detalle.Precio">
                         @foreach (Carro item in carroBLL.GetList(o => true))
@@ -73,19 +81,15 @@
         </div>
 
         @*Monto a pagar*@
-            <div class="col-md-15">
+            <div class="col-md-6">
                 <label for="Monto" class="form-label">Monto a pagar</label>
                 <div class="input-group">
                 <InputNumber @bind-Value="Detalle.Monto" class="form-control"/>
                 <button type="button"class="btn btn-dark" @onclick="AgregarDetalle" ><span class="oi oi-plus"></span> AGREGAR</button>
                 </div>
             </div>
-
+     </div>
     <br>
-
-
-    <br>
-
       <div class="table">
              <table class="table">
                     <thead>
@@ -101,22 +105,22 @@
                 </table>
             </div>
 
-            </div>
         </div>
 
 
 @*Botones*@
 <hr>
-        <div class="text-center">
-            <button type="button" class="btn btn-outline-primary" @onclick="Nuevo"><span class="oi oi-file"></span> Nuevo</button>
-            <button type="submit" class="btn btn-outline-success"><span class="oi oi-document"></span> Guardar</button>
-            <button type="button" class="btn btn-outline-danger" @onclick="Eliminar"><span class="oi oi-delete"></span> Eliminar</button>
-        <br>
-        <br>
-        </div>
-    </div>
-</EditForm>
+            <div class="text-center">
+                <button type="button" class="btn btn-outline-primary" @onclick="Nuevo"><span class="oi oi-file"></span> Nuevo</button>
+                <button type="submit" class="btn btn-outline-success"><span class="oi oi-document"></span> Guardar</button>
+                <button type="button" class="btn btn-outline-danger" @onclick="Eliminar"><span class="oi oi-delete"></span> Eliminar</button>
+            <br>
+            <br>
+            </div>
+     
+</div>
 
+</EditForm>
 @code {
     [Parameter]
     public int ventaId {get; set; }

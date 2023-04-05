@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YEdOBsHsJL0C5djb8hdUwY1NadTqBAHqo9+qxynky5o=",
+  "Hash": "IRmCgP40Xc/DXwT0DcPzNNE5QgwhgQMc2ln0K0bkg7Y=",
   "Source": "ProyectoFinal",
   "BasePath": "_content/ProyectoFinal",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "ProyectoFinal\\wwwroot",
       "Source": "ProyectoFinal",
-      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "Pattern": "**"
     }
@@ -1598,10 +1598,10 @@
       "OriginalItemSpec": "C:\\Users\\Jorge\\.nuget\\packages\\radzen.blazor\\4.7.12\\staticwebassets\\Radzen.Blazor.js"
     },
     {
-      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\obj\\Debug\\net7.0\\scopedcss\\bundle\\ProyectoFinal.styles.css",
+      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\obj\\Debug\\net7.0\\scopedcss\\bundle\\ProyectoFinal.styles.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "ProyectoFinal.styles.css",
       "AssetKind": "All",
@@ -1612,13 +1612,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\obj\\Debug\\net7.0\\scopedcss\\bundle\\ProyectoFinal.styles.css"
+      "OriginalItemSpec": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\obj\\Debug\\net7.0\\scopedcss\\bundle\\ProyectoFinal.styles.css"
     },
     {
-      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\ProyectoFinal.bundle.scp.css",
+      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\ProyectoFinal.bundle.scp.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "ProyectoFinal.bundle.scp.css",
       "AssetKind": "All",
@@ -1629,13 +1629,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\ProyectoFinal.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\ProyectoFinal.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -1649,10 +1649,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -1666,10 +1666,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -1683,10 +1683,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "AssetKind": "All",
@@ -1700,10 +1700,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
       "AssetKind": "All",
@@ -1717,10 +1717,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
-      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
       "AssetKind": "All",
@@ -1734,10 +1734,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
       "AssetKind": "All",
@@ -1751,10 +1751,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
       "AssetKind": "All",
@@ -1768,10 +1768,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
-      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
       "AssetKind": "All",
@@ -1785,10 +1785,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -1802,10 +1802,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\ICON-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\css\\open-iconic\\README.md",
+      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\css\\open-iconic\\README.md",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -1819,10 +1819,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
     },
     {
-      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\css\\site.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -1836,10 +1836,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\css\\styles.css",
+      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\css\\styles.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "css/styles.css",
       "AssetKind": "All",
@@ -1853,10 +1853,10 @@
       "OriginalItemSpec": "wwwroot\\css\\styles.css"
     },
     {
-      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\favicon.png",
+      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\favicon.png",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "favicon.png",
       "AssetKind": "All",
@@ -1870,10 +1870,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.png"
     },
     {
-      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\Images\\21983.jpg",
+      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\Images\\21983.jpg",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "Images/21983.jpg",
       "AssetKind": "All",
@@ -1887,10 +1887,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\21983.jpg"
     },
     {
-      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\Images\\Jaguar_F-Pace_E-Pace_I-Pace_Three_3_557725_1920x1080.jpg",
+      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\Images\\Jaguar_F-Pace_E-Pace_I-Pace_Three_3_557725_1920x1080.jpg",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "Images/Jaguar_F-Pace_E-Pace_I-Pace_Three_3_557725_1920x1080.jpg",
       "AssetKind": "All",
@@ -1904,10 +1904,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\Jaguar_F-Pace_E-Pace_I-Pace_Three_3_557725_1920x1080.jpg"
     },
     {
-      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\toggleSidebar.js",
+      "Identity": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\toggleSidebar.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "toggleSidebar.js",
       "AssetKind": "All",

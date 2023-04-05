@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DHgHhU1ahXh9CVEdw+fG01LspqFXxK7MPFEs3OgxB5/KCHaV4L54Xpi81JGtOl5POS8WvptAF7J7s4zch4cDjg==",
+  "dgSpecHash": "G+a9Pm/jYeq4tBCfnkLA9WOpuoRa2h23Z+k91aiejN6GWB+LpqMV5Fu5ZRUYp7YjSKwBH1mZBRv4yOG2TkFA9Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\ProyectoFinal\\ProyectoFinal.csproj",
+  "projectFilePath": "C:\\Users\\Jorge\\OneDrive\\Documentos\\Archivos\\7 trimestre\\ProyectoFinal\\ProyectoFinal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jorge\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Jorge\\.nuget\\packages\\libsassbuilder\\2.0.1\\libsassbuilder.2.0.1.nupkg.sha512",
