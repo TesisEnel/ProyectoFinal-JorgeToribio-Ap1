@@ -75,51 +75,12 @@ public bool Eliminar(int ventaId)
     }  
 public void InsertarDetalle(Venta venta)
 {
-    if (venta.VentaDetalle?.Any() == true)
-    {
-        foreach (var item in venta.VentaDetalle)
-        {
-            var carro = _Contexto.Carro.Find(item.CarroId);
 
-            if (carro != null)
-            {
-                carro.Existencia -= item.Cantidad;
-                _Contexto.Entry(carro).State = EntityState.Modified;
-            }
-        }
-        _Contexto.SaveChanges();
-    }
-
-    var Pruducido = _Contexto.Carro.Find(venta.CarroId);
-        if (venta.Cantidad != 0 && Pruducido != null)
-        {
-            Pruducido.Existencia += venta.Cantidad;
-            _Contexto.Entry(Pruducido).State = EntityState.Modified;
-            _Contexto.SaveChanges();
-        }
 }
 
 public void ModificarDetalle(Venta venta)
 {
-    var Pruducido = _Contexto.Carro.Find(venta.VentaId);
-        if (venta.Cantidad != 0 && Pruducido != null)
-        {
-            Pruducido.Existencia += venta.Cantidad;
-            _Contexto.Entry(Pruducido).State = EntityState.Modified;
-            _Contexto.SaveChanges();
-        }
 
-    foreach (var detalle in venta.VentaDetalle)
-    {
-        var carro = _Contexto.Carro.FirstOrDefault(p => p.CarroId == detalle.CarroId);
-        if (carro != null)
-        {
-            carro.Existencia -= detalle.Cantidad;
-            _Contexto.Entry(carro).State = EntityState.Modified;
-        }
-    }
-    
-    _Contexto.SaveChanges();
 }
 
 

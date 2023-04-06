@@ -31,54 +31,100 @@
             <div class="col-md-6">
                 <label for="Fecha " class="form-label">Fecha</label>
                 <InputDate @bind-Value="venta.Fecha" class="form-control"/>
+                <ValidationMessage For="@(() => venta.Fecha)" />
+
             </div>
+
+                <div class="row">
+        <div class="col-md-6">
+            <label for="select" class="form-label">Cliente</label>
+                    <InputSelect class="form-select" @bind-Value="Detalle.ClienteId">
+                        @foreach (Cliente item in clienteBLL.GetList(o => true))
+                        {
+                            <option value="@item.ClienteId">@item.ClienteId @item.Nombre @item.Apellido</option>
+                        }
+                    </InputSelect>
+                    <ValidationMessage For="@(() => Detalle.ClienteId)" />
+
+        </div>
+    
+        <div class="col-md-6">
+            <label for="select" class="form-label">Vehiculo</label>
+                    <InputSelect class="form-select" @bind-Value="Detalle.CarroId">
+                        @foreach (Carro item in carroBLL.GetList(o => true))
+                        {
+                            <option value="@item.CarroId">@item.CarroId @item.Modelo @item.Marca @item.Anio (@item.Precio)</option>
+                        }
+                    </InputSelect>
+                    <ValidationMessage For="@(() => Detalle.CarroId)" />
+
+        </div>
+  </div>
 
            <div class="col-md-6">
-                <label for="Modelo" class="form-label">Modelo</label>
-                <InputText @bind-Value="carro.Modelo" class="form-control" id="Modelo" />
-                <ValidationMessage For="@(() => carro.Modelo)" />
+                <label for="Modelo" class="form-label">Concepto</label>
+                <InputText @bind-Value="venta.Concepto" class="form-control" id="Modelo" />
+                <ValidationMessage For="@(() => venta.Concepto)" />
             </div>
         </div>
-
 
         <div class="modal-header">
             <h2>Detalle de la venta</h2>
         </div>
 
-            @*Detalle*@
-    <div class="row">
+            @*Detalle de venta*@
+
+<br>
+        <div class="row">
         <div class="col-md-6">
-            <label for="select" class="form-label">Cliente:</label>
-                    <InputSelect class="form-select" @bind-Value="Detalle.ClienteId">
-                        @foreach (Cliente item in clienteBLL.GetList(o => true))
-                        {
-                            <option value="@item.ClienteId">@item.ClienteId</option>
-                        }
-                    </InputSelect>
+                <label for="Periodo" class="form-label">Periodo de Tiempo</label>
+                <InputNumber @bind-Value="venta.PeriodoTiempo" class="form-control"/>
+                <ValidationMessage For="@(() => venta.PeriodoTiempo)" />
+
+            </div>
+            
+            <div class="col-md-6">
+                <label for="interés" class="form-label">Interés</label>
+                <div class="input-group">
+                <InputNumber @bind-Value="Detalle.Interes" class="form-control"/>
+                <button type="button"class="btn btn-dark" @onclick="AgregarDetalle" ><span class="oi oi-plus"></span> CALCULAR</button>
+                <ValidationMessage For="@(() => Detalle.Interes)" />
+                 </div>
+            </div>   
         </div>
-    
-        <div class="col-md-6">
-            <label for="select" class="form-label">Vehiculo:</label>
+ 
+
+        <div class="col-md-1">
+            <label for="select" class="form-label">Capital Total:</label>
                     <InputSelect class="form-select" @bind-Value="Detalle.CarroId">
                         @foreach (Carro item in carroBLL.GetList(o => true))
                         {
-                            <option value="@item.CarroId">@item.Modelo</option>
+                            <option value="@item.CarroId">@item.Precio</option>
                         }
                     </InputSelect>
-        </div>
-  </div>
+                <ValidationMessage For="@(() => Detalle.CarroId)" />
+        </div> 
+    <div class="col-md-6">
+        <label>Periodo de Tiempo: @venta.PeriodoTiempo</label>
+    </div>
+    <div class="col-md-6">
+        <label>Tasa de interés: @Detalle.Interes</label>
+    </div>
+    <div class="col-md-6">
+        <label>Couta a pagar: </label>
+    </div>
 
     <br>
       <div class="table">
              <table class="table">
                     <thead>
                         <tr>
-                            <th>Mes</th>
-                            <th>Saldo inicial</th>
-                            <th>Cuota</th>
-                            <th>Inicial</th>
-                            <th>Amotizacion</th>
-                            <th>Saldo Final</th>
+                            <th>N</th>
+                            <th>Capital</th>
+                            <th>interés</th>
+                            <th>Interés + Capital</th>
+                            <th>Cuota</th> 
+                            <th>Valor adeudado</th>
                         </tr>
                     </thead>
 
@@ -219,28 +265,11 @@ public void Eliminar()
     }
     public void AgregarDetalle()
     {
-        if (Detalle?.Cantidad > 0 && Detalle?.CarroId != null)
-        {
-            var carro = carroBLL.Buscar(Detalle.CarroId);
-            if(Detalle.Cantidad <= carro?.Existencia)
-            {
-                venta.VentaDetalle.Add(Detalle);               
-                venta.Cantidad += Detalle.Cantidad;               
-                Detalle = new VentaDetalle();
-            }
-            else
-            {
-                ShowNotification(
-                        new NotificationMessage
-                        {
-                            Severity = NotificationSeverity.Error,
-                            Summary = "Ha ocurrido un error al agregar al detalle.",
-                        } 
-                );
-            }
 
+    }
+    public void EliminarDetalle(int detalleId)
+    {
 
-        }
     }
     private void RemoverDetalle(VentaDetalle item) 
     {
@@ -248,20 +277,7 @@ public void Eliminar()
         this.venta.VentaDetalle.Remove(item);
 
     }
-    public void EliminarDetalle(int detalleId)
-    {
-        if (venta.VentaDetalle != null && detalleId > 0)
-        {
-            venta.VentaDetalle.RemoveAll(o => o.VentaDetalleId == detalleId);
-            ShowNotification(
-            new NotificationMessage
-                {
-                    Severity = NotificationSeverity.Info,
-                    Summary = "Se ha eliminado con exito."
-                }
-            );
-        }
-    }
+
 
     public void ShowNotification(NotificationMessage message)
     {

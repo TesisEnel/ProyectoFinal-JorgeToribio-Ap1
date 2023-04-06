@@ -116,17 +116,21 @@ namespace ProyectoFinal.Migrations
                     b.Property<int>("CarroId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("ClienteId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Concepto")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateOnly>("Fecha")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("PeriodoTiempo")
+                        .HasColumnType("INTEGER");
+
                     b.Property<double>("PrecioVenta")
                         .HasColumnType("REAL");
-
-                    b.Property<int>("clienteId")
-                        .HasColumnType("INTEGER");
 
                     b.HasKey("VentaId");
 
@@ -139,6 +143,9 @@ namespace ProyectoFinal.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<double>("Amortizacion")
+                        .HasColumnType("REAL");
+
                     b.Property<int>("Cantidad")
                         .HasColumnType("INTEGER");
 
@@ -148,14 +155,23 @@ namespace ProyectoFinal.Migrations
                     b.Property<int>("ClienteId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Descripcion")
-                        .HasColumnType("TEXT");
-
-                    b.Property<double>("Monto")
+                    b.Property<double>("Cuota")
                         .HasColumnType("REAL");
 
-                    b.Property<double>("Precio")
+                    b.Property<double>("Inicial")
                         .HasColumnType("REAL");
+
+                    b.Property<double>("Interes")
+                        .HasColumnType("REAL");
+
+                    b.Property<double>("SaldoFinal")
+                        .HasColumnType("REAL");
+
+                    b.Property<double>("SaldoInicial")
+                        .HasColumnType("REAL");
+
+                    b.Property<int>("Tiempo")
+                        .HasColumnType("INTEGER");
 
                     b.Property<int?>("VentaId")
                         .HasColumnType("INTEGER");

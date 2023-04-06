@@ -58,12 +58,13 @@ namespace ProyectoFinal.Migrations
                 {
                     VentaId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Concepto = table.Column<string>(type: "TEXT", nullable: true),
+                    Concepto = table.Column<string>(type: "TEXT", nullable: false),
                     Fecha = table.Column<DateOnly>(type: "TEXT", nullable: false),
-                    clienteId = table.Column<int>(type: "INTEGER", nullable: false),
+                    ClienteId = table.Column<int>(type: "INTEGER", nullable: false),
                     CarroId = table.Column<int>(type: "INTEGER", nullable: false),
                     PrecioVenta = table.Column<double>(type: "REAL", nullable: false),
-                    Cantidad = table.Column<int>(type: "INTEGER", nullable: false)
+                    Cantidad = table.Column<int>(type: "INTEGER", nullable: false),
+                    PeriodoTiempo = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -76,12 +77,16 @@ namespace ProyectoFinal.Migrations
                 {
                     VentaDetalleId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Descripcion = table.Column<string>(type: "TEXT", nullable: true),
                     CarroId = table.Column<int>(type: "INTEGER", nullable: false),
                     ClienteId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Tiempo = table.Column<int>(type: "INTEGER", nullable: false),
+                    SaldoInicial = table.Column<double>(type: "REAL", nullable: false),
+                    Cuota = table.Column<double>(type: "REAL", nullable: false),
+                    Interes = table.Column<double>(type: "REAL", nullable: false),
+                    Inicial = table.Column<double>(type: "REAL", nullable: false),
+                    Amortizacion = table.Column<double>(type: "REAL", nullable: false),
+                    SaldoFinal = table.Column<double>(type: "REAL", nullable: false),
                     Cantidad = table.Column<int>(type: "INTEGER", nullable: false),
-                    Monto = table.Column<double>(type: "REAL", nullable: false),
-                    Precio = table.Column<double>(type: "REAL", nullable: false),
                     VentaId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
