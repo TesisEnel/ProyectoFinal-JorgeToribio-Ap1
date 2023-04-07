@@ -18,13 +18,6 @@ public class Venta
     [Required(ErrorMessage = "El ID del carro es obligatorio.")]
     public int CarroId { get; set; }
 
-    [Required(ErrorMessage = "El precio de venta es obligatorio.")]
-    [Range(0, double.MaxValue, ErrorMessage = "El precio de venta debe ser mayor que cero.")]
-    public double PrecioVenta { get; set; }
-
-    [Required(ErrorMessage = "La cantidad vendida es obligatoria.")]
-    [Range(1, int.MaxValue, ErrorMessage = "La cantidad vendida debe ser mayor que cero.")]
-    public int Cantidad { get; set; }
     public int PeriodoTiempo { get; set; }
 
     [ForeignKey("VentaId")]

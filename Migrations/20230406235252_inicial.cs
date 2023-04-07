@@ -62,8 +62,6 @@ namespace ProyectoFinal.Migrations
                     Fecha = table.Column<DateOnly>(type: "TEXT", nullable: false),
                     ClienteId = table.Column<int>(type: "INTEGER", nullable: false),
                     CarroId = table.Column<int>(type: "INTEGER", nullable: false),
-                    PrecioVenta = table.Column<double>(type: "REAL", nullable: false),
-                    Cantidad = table.Column<int>(type: "INTEGER", nullable: false),
                     PeriodoTiempo = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>

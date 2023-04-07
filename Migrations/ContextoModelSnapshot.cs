@@ -110,9 +110,6 @@ namespace ProyectoFinal.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Cantidad")
-                        .HasColumnType("INTEGER");
-
                     b.Property<int>("CarroId")
                         .HasColumnType("INTEGER");
 
@@ -128,9 +125,6 @@ namespace ProyectoFinal.Migrations
 
                     b.Property<int>("PeriodoTiempo")
                         .HasColumnType("INTEGER");
-
-                    b.Property<double>("PrecioVenta")
-                        .HasColumnType("REAL");
 
                     b.HasKey("VentaId");
 
