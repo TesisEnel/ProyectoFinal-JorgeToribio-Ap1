@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 public class Cliente {
     [Key]
     public int ClienteId { get; set; }
+    public DateOnly Fecha { get; set; } = DateOnly.FromDateTime(DateTime.Now);
 
     [Required(ErrorMessage = "El nombre es requerido.")]
     [StringLength(50, ErrorMessage = "El nombre no puede tener más de 50 caracteres.")]

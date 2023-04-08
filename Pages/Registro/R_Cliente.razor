@@ -20,29 +20,33 @@
                     <button type="button" class="btn btn-outline-primary" @onclick="Buscar"><span class="oi oi-magnifying-glass"></span></button>
                 </div>
             </div>
+            <div class="col-md-6">
+                <label for="Fecha" class="form-label">Fecha</label>
+                <InputDate @bind-Value="cliente.Fecha" class="form-control" id="Modelo" />
+            </div>
+        </div>
 
+        <div class="row">
             <div class="col-md-6">
                 <label for="Nombre" class="form-label">Nombre</label>
                 <InputText type="text" @bind-Value="cliente.Nombre" class="form-control" id="Modelo" />
                 <ValidationMessage For="@(() => cliente.Nombre)" />
             </div>
-        </div>
 
-        <div class="row">
             <div class="col-md-6">
                 <label for="Apellido">Apellido</label>
                 <InputText type="text" @bind-Value="cliente.Apellido" class="form-control" />
                 <ValidationMessage For="@(() => cliente.Apellido)" />
             </div>
+        </div>
 
+        <div class="row">
             <div class="col-md-6">
                 <label for="CorreoElectronico">Correo Electronico</label>
                 <InputText type="text" @bind-Value="cliente.CorreoElectronico" class="form-control" />
                 <ValidationMessage For="@(() => cliente.CorreoElectronico)" />
             </div>
-        </div>
 
-        <div class="row">
             <div class="col-md-6">
                 <label for="Telefono">Telefono</label>
                 <InputText type="text" @bind-Value="cliente.Telefono" class="form-control" />

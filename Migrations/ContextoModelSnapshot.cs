@@ -40,8 +40,8 @@ namespace ProyectoFinal.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Existencia")
-                        .HasColumnType("INTEGER");
+                    b.Property<DateOnly>("Fecha")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Lugar")
                         .IsRequired()
@@ -88,6 +88,9 @@ namespace ProyectoFinal.Migrations
 
                     b.Property<string>("CorreoElectronico")
                         .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateOnly>("Fecha")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Nombre")

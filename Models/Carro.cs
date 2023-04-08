@@ -4,6 +4,7 @@ public class Carro
 {
     [Key]
     public int CarroId { get; set; }
+    public DateOnly Fecha { get; set; } = DateOnly.FromDateTime(DateTime.Now);
     [Required(ErrorMessage = "El modelo es requerido")]
     public string? Modelo { get; set; }
     [Required(ErrorMessage = "La marca es requerida")]
@@ -16,13 +17,10 @@ public class Carro
     [Range(1960, 2024, ErrorMessage = "El año debe estar entre 1960 y 2024")]
     public int Anio { get; set; }
     [Required(ErrorMessage = "El precio es requerido")]
-    [Range(0, 1000000, ErrorMessage = "El precio debe ser mayor que cero")]
+    [Range(1, 100000000000, ErrorMessage = "El precio debe ser mayor que cero")]
     public double Precio { get; set; }
     [Required(ErrorMessage = "El lugar es requerido")]
     public string? Lugar { get; set; } 
-    [Required(ErrorMessage = "El precio es requerido")]
-    [Range(0, 1000000, ErrorMessage = "La existencia tiene que ser mayor que cero")]
-    public  int  Existencia { get; set; }
     [Required(ErrorMessage = "El estado del vehiculo es requerido.")]
     public string? Estado { get; set; }
     [Required(ErrorMessage = "El combustible del vehiculo es requerido.")]
@@ -32,5 +30,6 @@ public class Carro
     [Required(ErrorMessage = "EL tipo de vehiculo es requerida.")]
     public string? TipoVehiculo { get; set; }
     [Required(ErrorMessage = "La cantidad de pasajeros es requerida.")]
+    [Range(1, 20, ErrorMessage = "La cantidad debe ser mayor que cero.")]
     public int CaantidadPasajeros { get; set; }
 }

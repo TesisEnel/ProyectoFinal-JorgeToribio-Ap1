@@ -30,9 +30,7 @@
         <div class="row">
             <div class="col-md-6">
                 <label for="Fecha " class="form-label">Fecha</label>
-                <InputDate @bind-Value="venta.Fecha" class="form-control"/>
-                
-
+                <InputDate @bind-Value="venta.Fecha" class="form-control"/> 
             </div>
 
                 <div class="row">
@@ -53,7 +51,7 @@
                     <InputSelect class="form-select" @bind-Value="venta.CarroId">
                         @foreach (Carro item in carroBLL.GetList(o => true))
                         {
-                            <option value="@item.CarroId">@item.CarroId @item.Modelo @item.Marca @item.Anio (@item.Precio)</option>
+                            <option value="@item.CarroId">@item.CarroId @item.Modelo @item.Marca @item.Color @item.Anio (@item.Precio)</option>
                         }
                     </InputSelect>
                     <ValidationMessage For="@(() => venta.CarroId)" />
@@ -142,7 +140,6 @@
 
         </div>
 
-
 @*Botones*@
 <hr>
     <div class="text-center">
@@ -185,7 +182,6 @@
                         Severity = NotificationSeverity.Success,
                         Summary = "Se ha encontrado con éxito."
                     });
-
         }
         else{
             ShowNotification(
@@ -196,12 +192,10 @@
                     }); 
         }
     }
-
     public void Nuevo()
     {
         this.venta = new Venta();
     }
-
     public void Guardar()
     {
         if (ValidarProducto())
@@ -299,8 +293,6 @@ public void Eliminar()
         return;
         }
 
-
-
         venta.Monto= carroBLL.Buscar(venta.CarroId).Precio;
         double init=venta.interes/100;
         double total= init+1;
@@ -310,8 +302,6 @@ public void Eliminar()
         venta.VentaDetalle= new List<VentaDetalle>();
         Detalle= new VentaDetalle();
 
-        
-     
         double cap=venta.Monto;
         for (int i = 0; i < venta.PeriodoTiempo; i++)
         {
@@ -326,18 +316,6 @@ public void Eliminar()
             
         }
     }
-
-    public void EliminarDetalle(int detalleId)
-    {
-
-    }
-    private void RemoverDetalle(VentaDetalle item) 
-    {
-
-        this.venta.VentaDetalle.Remove(item);
-
-    }
-
 
     public void ShowNotification(NotificationMessage message)
     {

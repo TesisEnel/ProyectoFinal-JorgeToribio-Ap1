@@ -23,9 +23,8 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <label for="Modelo" class="form-label">Modelo</label>
-                <InputText @bind-Value="carro.Modelo" class="form-control" id="Modelo" />
-                <ValidationMessage For="@(() => carro.Modelo)" />
+                <label for="Fecha" class="form-label">Fecha</label>
+                <InputDate @bind-Value="carro.Fecha" class="form-control" id="Modelo" />
             </div>
         </div>
 
@@ -36,69 +35,71 @@
                 <ValidationMessage For="@(() => carro.Marca)" />
             </div>
             <div class="col-md-6">
-                <label for="Color">Color</label>
-                <InputText @bind-Value="carro.Color" class="form-control" />
-                <ValidationMessage For="@(() => carro.Color)" />
+                <label for="Modelo" class="form-label">Modelo</label>
+                <InputText @bind-Value="carro.Modelo" class="form-control" id="Modelo" />
+                <ValidationMessage For="@(() => carro.Modelo)" />
             </div>
         </div>
 
         <div class="row">
+            <div class="col-md-6">
+                <label for="Color">Color</label>
+                <InputText @bind-Value="carro.Color" class="form-control" />
+                <ValidationMessage For="@(() => carro.Color)" />
+            </div>
+
             <div class="col-md-6">
                 <label for="Motor">Motor</label>
                 <InputText @bind-Value="carro.Motor" class="form-control" />
                 <ValidationMessage For="@(() => carro.Motor)" />
             </div>
-            <div class="col-md-6">
+        </div>
+
+        <div class="row">
+             <div class="col-md-6">
                 <label for="Anio">Año</label>
                 <InputNumber @bind-Value="carro.Anio" class="form-control" />
                 <ValidationMessage For="@(() => carro.Anio)" />
             </div>
-        </div>
-
-        <div class="row">
             <div class="col-md-6">
                 <label for="Precio">Precio</label>
                 <InputNumber @bind-Value="carro.Precio" class="form-control" />
                 <ValidationMessage For="@(() => carro.Precio)" />
             </div>
-            <div class="col-md-6">
-                <label for="Lugar">Lugar</label>
-                <InputText @bind-Value="carro.Lugar" class="form-control" />
-                <ValidationMessage For="@(() => carro.Lugar)" />
-            </div>
+
         </div>
 
         <div class="row">
             <div class="col-md-6">
-                <label for="Existencia">Existencia</label>
-                <InputNumber @bind-Value="carro.Existencia" class="form-control" />
-                <ValidationMessage For="@(() => carro.Existencia)" />
-            </div>
-
-            <div class="col-md-6">
                 <label for="Estado" class="form-label">Estado</label>
                 <InputSelect @bind-Value = "carro.Estado" class="form-control">
-                <option value="op1">--</option>
-                <option value="op1">Nuevo</option>
-                <option value="op2">Usado</option>
+                <option value="Null">--</option>
+                <option value="Nuevo">Nuevo</option>
+                <option value="Nuevo">Usado</option>
                 </InputSelect>
                 <ValidationMessage For="@(() => carro.Estado)" />
             </div>
+           <div class="col-md-6">
+                <label for="Lugar">Lugar</label>
+                <InputText @bind-Value="carro.Lugar" class="form-control" />
+                <ValidationMessage For="@(() => carro.Lugar)" />
+            </div>
+
         </div>
 
         <div class="row">
             <div class="col-md-6">
                 <label for="Combustible" class="form-label">Combustible</label>
                 <InputSelect @bind-Value = "carro.Combustible" class="form-control">
-                <option value="op1">--</option>
-                <option value="op2">Gasolina</option>
-                <option value="op3">Diésel</option>
-                <option value="op4">Gas natural</option>
-                <option value="op5">Etanol</option>
-                <option value="op6">Biodiesel</option>
-                <option value="op7">Hidrógeno</option>
-                <option value="op8">Propano</option>
-                <option value="op9">Electricidad</option>
+                <option value="Null">--</option>
+                <option value="Gasolina">Gasolina</option>
+                <option value="Diésel">Diésel</option>
+                <option value="Gas natural">Gas natural</option>
+                <option value="Etanol">Etanol</option>
+                <option value="Biodiesel">Biodiesel</option>
+                <option value="Hidrógeno">Hidrógeno</option>
+                <option value="Propano">Propano</option>
+                <option value="Electricidad">Electricidad</option>
 
                 </InputSelect>
                 <ValidationMessage For="@(() => carro.Combustible)" />
@@ -115,9 +116,9 @@
             <div class="col-md-6">
                 <label for="Transmisión">Transmisión</label>
                 <InputSelect @bind-Value = "carro.Transmision" class="form-control">
-                <option value="op1">--</option>
-                <option value="op2">Transmisión manual</option>
-                <option value="op3">Transmisión automática</option>
+                <option value="Null">--</option>
+                <option value="Transmisión manual">Transmisión manual</option>
+                <option value="Transmisión automática">Transmisión automática</option>
                 </InputSelect>
                 <ValidationMessage For="@(() => carro.Transmision)" />
             </div>
@@ -128,6 +129,7 @@
                 <ValidationMessage For="@(() => carro.CaantidadPasajeros)" />
             </div>
         </div>
+
 
     </div>
 

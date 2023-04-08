@@ -33,6 +33,7 @@
             <thead>
                 <tr>
                     <th>ClienteId</th>
+                    <th>Fecha</th>
                     <th>Nombre</th>
                     <th>Apellido</th>                  
                     <th>Correo Electronico</th>    
@@ -43,7 +44,8 @@
                 @foreach (var item in lista)
                 {
                     <tr>
-                        <td>@item.ClienteId</td>                      
+                        <td>@item.ClienteId</td>  
+                        <td>@item.Fecha</td>  
                         <td>@item.Nombre</td>   
                         <td>@item.Apellido</td>   
                         <td>@item.CorreoElectronico</td>
