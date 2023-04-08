@@ -17,7 +17,7 @@ public class Carro
     public int Anio { get; set; }
     [Required(ErrorMessage = "El precio es requerido")]
     [Range(0, 1000000, ErrorMessage = "El precio debe ser mayor que cero")]
-    public decimal Precio { get; set; }
+    public double Precio { get; set; }
     [Required(ErrorMessage = "El lugar es requerido")]
     public string? Lugar { get; set; } 
     [Required(ErrorMessage = "El precio es requerido")]

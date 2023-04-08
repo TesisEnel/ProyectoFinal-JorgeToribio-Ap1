@@ -4,29 +4,11 @@ public class VentaDetalle
 {
     [Key]
     public int VentaDetalleId { get; set; }
-    public int CarroId { get; set; }
-    [Required(ErrorMessage ="El tiempo tiene que ser mayor que 0.")]
-    [Range(1, int.MaxValue)]
-    public int Tiempo { get; set; }
+    public int VentaId { get; set; }
+    public int cuota { get; set; }
+    public double Capital { get; set; }
+    public double interes { get; set; }
+    public double interesMasCapital { get; set; }
+    public double ValorAdeudado { get; set; }
 
-    [Required(ErrorMessage ="El saldo tiene que ser mayor que 0.")]
-    [Range(0, double.MaxValue)]
-    public double SaldoInicial { get; set; }
-
-    [Required(ErrorMessage ="La cuota tiene que ser mayor que 0.")]
-    [Range(0, double.MaxValue)]
-    public double Cuota { get; set; }
-    [Required(ErrorMessage ="La cuota tiene que ser mayor que 0.")]
-    [Range(0, double.MaxValue)]
-    public double Interes { get; set; }
-
-    [Range(0, double.MaxValue)]
-    public double Inicial { get; set; }
-
-    [Range(0, double.MaxValue)]
-    public double Amortizacion { get; set; }
-
-    [Range(0, double.MaxValue)]
-    public double SaldoFinal { get; set; }
-    public int Cantidad { get; set; }
 }

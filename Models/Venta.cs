@@ -18,6 +18,9 @@ public class Venta
     [Required(ErrorMessage = "El ID del carro es obligatorio.")]
     public int CarroId { get; set; }
     public int PeriodoTiempo { get; set; }
+    public double Monto { get; set; }
+    public double interes { get; set; }
+    public double cuota { get; set; }
 
     [ForeignKey("VentaId")]
     public List<VentaDetalle> VentaDetalle { get; set; }

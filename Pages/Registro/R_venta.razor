@@ -31,7 +31,7 @@
             <div class="col-md-6">
                 <label for="Fecha " class="form-label">Fecha</label>
                 <InputDate @bind-Value="venta.Fecha" class="form-control"/>
-                <ValidationMessage For="@(() => venta.Fecha)" />
+                
 
             </div>
 
@@ -86,32 +86,26 @@
             <div class="col-md-6">
                 <label for="interés" class="form-label">Interés</label>
                 <div class="input-group">
-                <InputNumber @bind-Value="Detalle.Interes" class="form-control"/>
+                <InputNumber @bind-Value="venta.interes" class="form-control"/>
                 <button type="button"class="btn btn-dark" @onclick="AgregarDetalle" ><span class="oi oi-plus"></span> CALCULAR</button>
-                <ValidationMessage For="@(() => Detalle.Interes)" />
+                <ValidationMessage For="@(() => venta.interes)" />
                  </div>
             </div>   
         </div>
  
-
-        <div class="col-md-1">
-            <label for="select" class="form-label">Capital Total</label>
-                    <InputSelect class="form-select" @bind-Value="venta.CarroId">
-                        @foreach (Carro item in carroBLL.GetList(o => true))
-                        {
-                            <option value="@item.CarroId">@item.Precio</option>
-                        }
-                    </InputSelect>
-                <ValidationMessage For="@(() => venta.CarroId)" />
-        </div> 
+<br>
+        
     <div class="col-md-6">
         <label>Periodo de Tiempo: @venta.PeriodoTiempo</label>
     </div>
     <div class="col-md-6">
-        <label>Tasa de interés: @Detalle.Interes</label>
+        <label>Tasa de interés: @venta.interes %</label>
     </div>
     <div class="col-md-6">
-        <label>Couta a pagar: </label>
+        <label>Coutas: @venta.cuota.ToString("N3") </label>
+    </div>
+    <div class="col-md-6">
+        <label>Monto: @venta.Monto </label>
     </div>
 
     <br>
@@ -127,6 +121,21 @@
                             <th>Valor adeudado</th>
                         </tr>
                     </thead>
+                    <tbody>
+                            @if(venta.VentaDetalle!=null){
+                              @foreach (var detalle1 in venta.VentaDetalle)
+                             { 
+                                 <tr>
+                                      <td>@detalle1.cuota</td> 
+                                      <td>@detalle1.Capital.ToString("N3")</td>
+                                      <td>@detalle1.interes.ToString("N3")</td>
+                                      <td>@detalle1.interesMasCapital.ToString("N3")</td>
+                                      <td>@venta.cuota.ToString("N3")</td>
+                                      <td>@detalle1.ValorAdeudado.ToString("N3")</td>
+                                 </tr>
+                             }
+                            }
+                         </tbody>
 
                 </table>
             </div>
@@ -265,8 +274,59 @@ public void Eliminar()
     }
     public void AgregarDetalle()
     {
+        if(venta.CarroId<=0){
+            ShowNotification(new NotificationMessage
+        {
+            Severity = NotificationSeverity.Error,
+            Summary = "Debe seleccionar un vehiculo."
+        });
+        return;
+        }
+        if(venta.PeriodoTiempo<=0){
+            ShowNotification(new NotificationMessage
+        {
+            Severity = NotificationSeverity.Error,
+            Summary = "EL periodo de tiempo debe ser mayor a 0."
+        });
+        return;
+        }
+        if(venta.interes<=0){
+            ShowNotification(new NotificationMessage
+        {
+            Severity = NotificationSeverity.Error,
+            Summary = "El interes debe ser mayor a 0"
+        });
+        return;
+        }
 
+
+
+        venta.Monto= carroBLL.Buscar(venta.CarroId).Precio;
+        double init=venta.interes/100;
+        double total= init+1;
+        double intereses = Math.Pow(total,venta.PeriodoTiempo);  
+
+        venta.cuota = venta.Monto*( (init * intereses)/ (intereses-1 ));
+        venta.VentaDetalle= new List<VentaDetalle>();
+        Detalle= new VentaDetalle();
+
+        
+     
+        double cap=venta.Monto;
+        for (int i = 0; i < venta.PeriodoTiempo; i++)
+        {
+            Detalle.cuota= i+1;
+            Detalle.interes= cap *init;
+            Detalle.interesMasCapital= Detalle.interes + cap;
+            Detalle.ValorAdeudado= Detalle.interesMasCapital - venta.cuota;
+            venta.VentaDetalle.Add(Detalle);
+            Detalle.Capital=cap;
+            cap= Detalle.ValorAdeudado;
+            Detalle= new VentaDetalle();
+            
+        }
     }
+
     public void EliminarDetalle(int detalleId)
     {
 

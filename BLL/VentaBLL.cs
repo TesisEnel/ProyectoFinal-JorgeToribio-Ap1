@@ -39,31 +39,7 @@ public class VentaBLL{
 
 public bool Eliminar(int ventaId)
 {
-    var venta = _Contexto.Venta.Include(p => p.VentaDetalle).FirstOrDefault(p => p.VentaId == ventaId);
-
-    if (venta != null)
-    {
-        foreach (var detalle in venta.VentaDetalle)
-        {
-            var carro = _Contexto.Carro.Find(detalle.CarroId);
-            if (carro == null)
-            {
-                continue;
-            }
-            carro.Existencia += detalle.Cantidad;
-            _Contexto.Entry(carro).State = EntityState.Modified;
-        }
-
-        _Contexto.RemoveRange(venta.VentaDetalle);
-        _Contexto.Entry(venta).State = EntityState.Deleted;
-
-        int filasAfectadas = _Contexto.SaveChanges();
-        return filasAfectadas > 0;
-    }
-    else
-    {
-        return false;
-    }
+    return false;
 }
 
     public Venta? Buscar(int ventaId){
@@ -73,13 +49,5 @@ public bool Eliminar(int ventaId)
     public List<Venta>GetList(Expression<Func<Venta, bool>> criterio){
         return _Contexto.Venta.AsNoTracking().Where(criterio).ToList();
     }  
-public void InsertarDetalle(Venta venta)
-{
-
-}
-public void ModificarDetalle(Venta venta)
-{
-
-}
 
 }

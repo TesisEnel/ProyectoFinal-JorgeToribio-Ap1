@@ -59,8 +59,8 @@ namespace ProyectoFinal.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("Precio")
-                        .HasColumnType("TEXT");
+                    b.Property<double>("Precio")
+                        .HasColumnType("REAL");
 
                     b.Property<string>("TipoVehiculo")
                         .IsRequired()
@@ -123,8 +123,17 @@ namespace ProyectoFinal.Migrations
                     b.Property<DateOnly>("Fecha")
                         .HasColumnType("TEXT");
 
+                    b.Property<double>("Monto")
+                        .HasColumnType("REAL");
+
                     b.Property<int>("PeriodoTiempo")
                         .HasColumnType("INTEGER");
+
+                    b.Property<double>("cuota")
+                        .HasColumnType("REAL");
+
+                    b.Property<double>("interes")
+                        .HasColumnType("REAL");
 
                     b.HasKey("VentaId");
 
@@ -137,35 +146,23 @@ namespace ProyectoFinal.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<double>("Amortizacion")
+                    b.Property<double>("Capital")
                         .HasColumnType("REAL");
 
-                    b.Property<int>("Cantidad")
+                    b.Property<double>("ValorAdeudado")
+                        .HasColumnType("REAL");
+
+                    b.Property<int>("VentaId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("CarroId")
+                    b.Property<int>("cuota")
                         .HasColumnType("INTEGER");
 
-                    b.Property<double>("Cuota")
+                    b.Property<double>("interes")
                         .HasColumnType("REAL");
 
-                    b.Property<double>("Inicial")
+                    b.Property<double>("interesMasCapital")
                         .HasColumnType("REAL");
-
-                    b.Property<double>("Interes")
-                        .HasColumnType("REAL");
-
-                    b.Property<double>("SaldoFinal")
-                        .HasColumnType("REAL");
-
-                    b.Property<double>("SaldoInicial")
-                        .HasColumnType("REAL");
-
-                    b.Property<int>("Tiempo")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("VentaId")
-                        .HasColumnType("INTEGER");
 
                     b.HasKey("VentaDetalleId");
 
@@ -178,7 +175,9 @@ namespace ProyectoFinal.Migrations
                 {
                     b.HasOne("Venta", null)
                         .WithMany("VentaDetalle")
-                        .HasForeignKey("VentaId");
+                        .HasForeignKey("VentaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Venta", b =>
