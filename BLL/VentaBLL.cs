@@ -77,11 +77,9 @@ public void InsertarDetalle(Venta venta)
 {
 
 }
-
 public void ModificarDetalle(Venta venta)
 {
 
 }
-
 
 }

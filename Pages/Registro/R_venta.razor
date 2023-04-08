@@ -38,25 +38,25 @@
                 <div class="row">
         <div class="col-md-6">
             <label for="select" class="form-label">Cliente</label>
-                    <InputSelect class="form-select" @bind-Value="Detalle.ClienteId">
+                    <InputSelect class="form-select" @bind-Value="venta.ClienteId">
                         @foreach (Cliente item in clienteBLL.GetList(o => true))
                         {
                             <option value="@item.ClienteId">@item.ClienteId @item.Nombre @item.Apellido</option>
                         }
                     </InputSelect>
-                    <ValidationMessage For="@(() => Detalle.ClienteId)" />
+                    <ValidationMessage For="@(() => venta.ClienteId)" />
 
         </div>
     
         <div class="col-md-6">
             <label for="select" class="form-label">Vehiculo</label>
-                    <InputSelect class="form-select" @bind-Value="Detalle.CarroId">
+                    <InputSelect class="form-select" @bind-Value="venta.CarroId">
                         @foreach (Carro item in carroBLL.GetList(o => true))
                         {
                             <option value="@item.CarroId">@item.CarroId @item.Modelo @item.Marca @item.Anio (@item.Precio)</option>
                         }
                     </InputSelect>
-                    <ValidationMessage For="@(() => Detalle.CarroId)" />
+                    <ValidationMessage For="@(() => venta.CarroId)" />
 
         </div>
   </div>
@@ -96,13 +96,13 @@
 
         <div class="col-md-1">
             <label for="select" class="form-label">Capital Total</label>
-                    <InputSelect class="form-select" @bind-Value="Detalle.CarroId">
+                    <InputSelect class="form-select" @bind-Value="venta.CarroId">
                         @foreach (Carro item in carroBLL.GetList(o => true))
                         {
                             <option value="@item.CarroId">@item.Precio</option>
                         }
                     </InputSelect>
-                <ValidationMessage For="@(() => Detalle.CarroId)" />
+                <ValidationMessage For="@(() => venta.CarroId)" />
         </div> 
     <div class="col-md-6">
         <label>Periodo de Tiempo: @venta.PeriodoTiempo</label>
@@ -136,13 +136,13 @@
 
 @*Botones*@
 <hr>
-            <div class="text-center">
+    <div class="text-center">
                 <button type="button" class="btn btn-outline-primary" @onclick="Nuevo"><span class="oi oi-file"></span> Nuevo</button>
                 <button type="submit" class="btn btn-outline-success"><span class="oi oi-document"></span> Guardar</button>
                 <button type="button" class="btn btn-outline-danger" @onclick="Eliminar"><span class="oi oi-delete"></span> Eliminar</button>
             <br>
             <br>
-            </div>
+    </div>
      
 </div>
 

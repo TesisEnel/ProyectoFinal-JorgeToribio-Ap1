@@ -146,9 +146,6 @@ namespace ProyectoFinal.Migrations
                     b.Property<int>("CarroId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ClienteId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<double>("Cuota")
                         .HasColumnType("REAL");
 

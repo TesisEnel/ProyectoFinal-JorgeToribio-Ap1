@@ -4,13 +4,7 @@ public class VentaDetalle
 {
     [Key]
     public int VentaDetalleId { get; set; }
-
-    [Required(ErrorMessage ="El id es requerido.")]
     public int CarroId { get; set; }
-
-    [Required(ErrorMessage ="El id es requerido.")]
-    public int ClienteId { get; set; }
-
     [Required(ErrorMessage ="El tiempo tiene que ser mayor que 0.")]
     [Range(1, int.MaxValue)]
     public int Tiempo { get; set; }

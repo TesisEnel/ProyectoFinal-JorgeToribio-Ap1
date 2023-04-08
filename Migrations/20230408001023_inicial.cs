@@ -76,7 +76,6 @@ namespace ProyectoFinal.Migrations
                     VentaDetalleId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     CarroId = table.Column<int>(type: "INTEGER", nullable: false),
-                    ClienteId = table.Column<int>(type: "INTEGER", nullable: false),
                     Tiempo = table.Column<int>(type: "INTEGER", nullable: false),
                     SaldoInicial = table.Column<double>(type: "REAL", nullable: false),
                     Cuota = table.Column<double>(type: "REAL", nullable: false),

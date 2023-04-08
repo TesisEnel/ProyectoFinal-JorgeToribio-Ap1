@@ -17,7 +17,6 @@ public class Venta
 
     [Required(ErrorMessage = "El ID del carro es obligatorio.")]
     public int CarroId { get; set; }
-
     public int PeriodoTiempo { get; set; }
 
     [ForeignKey("VentaId")]

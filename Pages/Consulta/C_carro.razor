@@ -1,41 +1,45 @@
 @page "/c_carro"
+@inject CarroBLL carroBLL;
 
-@inject CarroBLL carroBLL
-
-<EditForm Model="carroBLL">
-    <div class="card">    
-    
+<EditForm Model="lista">
+    <DataAnnotationsValidator />
+    <div class="card">
         <div class="card-header">
-            <h4>Consulta Auto
-                  <div class="oi oi-people"></div>
-            </h4>
+            <h1>Consulta de productos</h1>
         </div>
-  
-       <div class="card-body">
-            <form>
-                <div class="input-group d-flex align-items-end">
-
-                  <div class="form-group col-md-3">
-                  <InputSelect class="form-select text-14" @bind-Value="Filtro">                                
-                        <option value="0">Id</option>
-                        <option value="1">Marca</option>
-                    </InputSelect>
-                    </div>
-               <div class="Form-group col-md-1"></div>
-    
-                   <div class="Form-group col-3" >
-                        <label>Criterio</label>
-                        <InputText class="form-control" @bind-Value="Criterio" placeholder="Ingrese el criterio de busqueda"  />
-                    </div>
-                    <button type="button" class="btn btn-outline-primary" @onclick="Consultar"><i class="oi oi-magnifying-glass" /></button>                   
+            <div class="card-body">
+                <div class="row">
+                <div class="col-2">
+                    <label>Criterio</label>
+                    <input type="text" class="form-control" @bind="Criterio" />
                 </div>
-            </form>
+                <div class="col-2">                    
+                    <label class="form-label">Filtro</label>
+                    <div class = "input-group">
+                    <select class="form-control" @bind="Filtro">
+                        <option value="1">CarroId</option>
+                        <option value="2">Marca</option>
+                        <option value="3">Modelo</option>
+                        <option value="4">Color</option>
+                        <option value="5">Motor</option>
+                        <option value="6">Año</option>
+                        <option value="7">Precio</option>
+                        <option value="8">Lugar</option>
+                        <option value="9">Existencia</option>
+                        <option value="10">Estado</option>
+                        <option value="11">Combustible</option>
+                        <option value="12">Transmisión</option>
+                        <option value="13">Tipo De vehiculo</option>
+                        <option value="14">Todo</option>
+                    </select>
+                    <button type="button" class="btn btn-outline-primary" @onclick="Buscar"><i class="oi oi-magnifying-glass" /></button>  
+                </div>
+                </div>
+            </div>
         </div>
-    
-         <table class="table table-light table-striped table-bordered">
-            <thead class="thead">
-                <tr class="table">
-
+        <table class="table">
+            <thead>
+                <tr>
                     <th>Carro ID</th>
                     <th>Marca</th>
                     <th>Modelo</th>                  
@@ -45,11 +49,15 @@
                     <th>Precio</th>   
                     <th>Lugar</th> 
                     <th>Existencia</th> 
-              
+                    <th>Estado</th>
+                    <th>Combustible</th>
+                    <th>Transmisión</th>
+                    <th>Tipo Vehiculo</th>
+                    <th>Cantidad de pasajeros</th>
                 </tr>
             </thead>
-          <tbody>
-                @foreach (var item in Lcarro)
+            <tbody>
+                @foreach (var item in lista)
                 {
                     <tr>
                         <td>@item.CarroId</td>                      
@@ -60,49 +68,61 @@
                         <td>@item.Anio</td>
                         <td>@item.Precio</td>
                         <td>@item.Lugar</td>
-                        <td>@item.Existencia</td>
-                    </tr>                   
-                }          
-            </tbody>         
+                        <td>@item.Estado</td>
+                        <td>@item.Combustible</td>                        
+                        <td>@item.Transmision</td>   
+                        <td>@item.TipoVehiculo</td>   
+                        <td>@item.CaantidadPasajeros</td>   
+                   </tr>                   
+                }  
+            </tbody>
         </table>
- </div>
+    </div>
 </EditForm>
 
-@code{
-    
-    #nullable disable 
-    public string Filtro;
-    public string Criterio;
-    public List<Carro> Lcarro { get; set; } = new List<Carro>();
-    public Carro carro { get; set; } = new Carro();    
-    bool listado = false;
+@code
+{
+    public string Criterio { get; set; } = "";
+    public string Filtro { get; set; } = "";
+    public List<Carro> lista { get; set; } = new List<Carro>();
 
-
-  protected override void OnInitialized()
+    protected override void OnInitialized()
     {
-        Filtro = "0";
-        Lcarro = carroBLL.GetList(e => true);
+        Buscar();
     }
-    
-    public void Consultar()
-    {
-        
-        if (Criterio != null)
-        {
-            switch (Filtro)
-            {
-                case "0": 
-                        Lcarro = carroBLL.GetList(e => e.CarroId == int.Parse(Criterio));
-                
-                    break;
 
-                case "1": 
-                    
-                        Lcarro = carroBLL.GetList(p => p.Marca.ToLower().Contains(Criterio.ToLower()));
-                    break;
-                default:
-                        Lcarro = carroBLL.GetList(o => true); break;
-            }
+    public void Buscar()
+    {
+        switch (Filtro)
+        {
+            case "1":
+                lista = carroBLL.GetList(o => o.CarroId.ToString().Contains(Criterio.ToLower())); break;
+            case "2":
+                lista = carroBLL.GetList(p => p.Marca!.ToLower().Contains(Criterio.ToLower())); break;
+            case "3":
+                lista = carroBLL.GetList(p => p.Modelo!.ToLower().Contains(Criterio.ToLower())); break;
+            case "4":
+                lista = carroBLL.GetList(p => p.Color!.ToLower().Contains(Criterio.ToLower())); break;
+            case "5":
+                lista = carroBLL.GetList(p => p.Motor!.ToLower().Contains(Criterio.ToLower())); break;
+            case "6":
+                lista = carroBLL.GetList(o => o.Anio!.ToString().Contains(Criterio.ToLower())); break;
+            case "7":
+                lista = carroBLL.GetList(o => o.Precio!.ToString().Contains(Criterio.ToLower())); break;
+            case "8":
+                lista = carroBLL.GetList(p => p.Lugar!.ToLower().Contains(Criterio.ToLower())); break;
+            case "9":
+                lista = carroBLL.GetList(o => o.Existencia.ToString().Contains(Criterio.ToLower())); break;
+            case "10":
+                lista = carroBLL.GetList(p => p.Estado!.ToLower().Contains(Criterio.ToLower())); break;
+            case "11":
+                lista = carroBLL.GetList(p => p.Combustible!.ToLower().Contains(Criterio.ToLower())); break;
+            case "12":
+                lista = carroBLL.GetList(p => p.Transmision!.ToLower().Contains(Criterio.ToLower())); break;
+            case "13":
+                lista = carroBLL.GetList(p => p.TipoVehiculo!.ToLower().Contains(Criterio.ToLower())); break;
+            default:
+                lista = carroBLL.GetList(o => true); break;
         }
     }
 }

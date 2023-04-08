@@ -1,11 +1,11 @@
-@page "/c_cliente"
-@inject ClienteBLL ClienteBLL;
+@page "/c_venta"
+@inject VentaBLL ventaBLL;
 
 <EditForm Model="lista">
     <DataAnnotationsValidator />
     <div class="card">
         <div class="card-header">
-            <h1>Consulta de Clientes</h1>
+            <h1>Consulta de ventas</h1>
         </div>
         <div class="card-body">
             <div class="row">
@@ -17,11 +17,11 @@
                     <label class="form-label">Filtro</label>
                     <div class = "input-group">
                     <select class="form-control" @bind="Filtro">
-                        <option value="1">ClienteId</option>
-                        <option value="2">Nombre</option>
-                        <option value="3">Apellido</option>
-                        <option value="4">Correo Electronico</option>
-                        <option value="5">Telefono</option>
+                        <option value="1">VentaId</option>
+                        <option value="2">Fecha</option>
+                        <option value="3">ClienteId</option>
+                        <option value="4">VehiculoId</option>
+                        <option value="5">Concepto</option>
                         <option value="6">Todo</option>
                     </select>
                     <button type="button" class="btn btn-outline-primary" @onclick="Buscar"><i class="oi oi-magnifying-glass" /></button>  
@@ -32,22 +32,22 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>ClienteId</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>                  
-                    <th>Correo Electronico</th>    
-                    <th>Telefono</th>  
+                    <th>VentaId</th>
+                    <th>Fecha</th>
+                    <th>ClienteId</th>                  
+                    <th>VehiculoId</th>    
+                    <th>Concepto</th>  
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in lista)
                 {
                     <tr>
-                        <td>@item.ClienteId</td>                      
-                        <td>@item.Nombre</td>   
-                        <td>@item.Apellido</td>   
-                        <td>@item.CorreoElectronico</td>
-                        <td>@item.Telefono</td>
+                        <td>@item.VentaId</td>                      
+                        <td>@item.Fecha</td>   
+                        <td>@item.ClienteId</td>   
+                        <td>@item.CarroId</td>
+                        <td>@item.Concepto</td>
                    </tr>                   
                 }  
             </tbody>
@@ -59,7 +59,7 @@
 {
     public string Criterio { get; set; } = "";
     public string Filtro { get; set; } = "";
-    public List<Cliente> lista { get; set; } = new List<Cliente>();
+    public List<Venta> lista { get; set; } = new List<Venta>();
 
     protected override void OnInitialized()
     {
@@ -71,17 +71,18 @@
         switch (Filtro)
         {
             case "1":
-                lista = ClienteBLL.GetList(o => o.ClienteId.ToString().Contains(Criterio.ToLower())); break;
+                lista = ventaBLL.GetList(o => o.VentaId.ToString().Contains(Criterio.ToLower())); break;
             case "2":
-                lista = ClienteBLL.GetList(p => p.Nombre!.ToLower().Contains(Criterio.ToLower())); break;
+               // lista = ventaBLL.GetList(p => p.Fecha!.ToLower().Contains(Criterio.ToLower())); 
+               break;
             case "3":
-                lista = ClienteBLL.GetList(p => p.Apellido!.ToLower().Contains(Criterio.ToLower())); break;
+                lista = ventaBLL.GetList(o => o.ClienteId.ToString().Contains(Criterio.ToLower())); break;
             case "4":
-                lista = ClienteBLL.GetList(p => p.CorreoElectronico!.ToLower().Contains(Criterio.ToLower())); break;
+                lista = ventaBLL.GetList(o => o.CarroId.ToString().Contains(Criterio.ToLower())); break;
             case "5":
-                lista = ClienteBLL.GetList(p => p.Telefono!.ToLower().Contains(Criterio.ToLower())); break;
+                lista = ventaBLL.GetList(p => p.Concepto!.ToLower().Contains(Criterio.ToLower())); break;
             default:
-                lista = ClienteBLL.GetList(o => true); break;
+                lista = ventaBLL.GetList(o => true); break;
         }
     }
 }
