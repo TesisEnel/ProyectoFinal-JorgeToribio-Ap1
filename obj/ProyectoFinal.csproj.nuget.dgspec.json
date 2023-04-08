@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jorge\\OneDrive\\Escritorio\\ProyectoFinal\\ProyectoFinal.csproj": {}
+    "C:\\Users\\Jorge\\OneDrive\\Documentos\\ProyectoFinal\\ProyectoFinal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jorge\\OneDrive\\Escritorio\\ProyectoFinal\\ProyectoFinal.csproj": {
+    "C:\\Users\\Jorge\\OneDrive\\Documentos\\ProyectoFinal\\ProyectoFinal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jorge\\OneDrive\\Escritorio\\ProyectoFinal\\ProyectoFinal.csproj",
+        "projectUniqueName": "C:\\Users\\Jorge\\OneDrive\\Documentos\\ProyectoFinal\\ProyectoFinal.csproj",
         "projectName": "ProyectoFinal",
-        "projectPath": "C:\\Users\\Jorge\\OneDrive\\Escritorio\\ProyectoFinal\\ProyectoFinal.csproj",
+        "projectPath": "C:\\Users\\Jorge\\OneDrive\\Documentos\\ProyectoFinal\\ProyectoFinal.csproj",
         "packagesPath": "C:\\Users\\Jorge\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jorge\\OneDrive\\Escritorio\\ProyectoFinal\\obj\\",
+        "outputPath": "C:\\Users\\Jorge\\OneDrive\\Documentos\\ProyectoFinal\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

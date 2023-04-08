@@ -9,77 +9,77 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProyectoFinal
 build_property.RootNamespace = ProyectoFinal
-build_property.ProjectDir = C:\Users\Jorge\OneDrive\Escritorio\ProyectoFinal\
+build_property.ProjectDir = C:\Users\Jorge\OneDrive\Documentos\ProyectoFinal\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Jorge\OneDrive\Escritorio\ProyectoFinal
+build_property.MSBuildProjectDirectory = C:\Users\Jorge\OneDrive\Documentos\ProyectoFinal
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Jorge/OneDrive/Escritorio/ProyectoFinal/App.razor]
+[C:/Users/Jorge/OneDrive/Documentos/ProyectoFinal/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jorge/OneDrive/Escritorio/ProyectoFinal/Pages/Consulta/C_carro.razor]
+[C:/Users/Jorge/OneDrive/Documentos/ProyectoFinal/Pages/Consulta/C_carro.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29uc3VsdGFcQ19jYXJyby5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jorge/OneDrive/Escritorio/ProyectoFinal/Pages/Consulta/C_cliente.razor]
+[C:/Users/Jorge/OneDrive/Documentos/ProyectoFinal/Pages/Consulta/C_cliente.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29uc3VsdGFcQ19jbGllbnRlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jorge/OneDrive/Escritorio/ProyectoFinal/Pages/Consulta/C_ventas.razor]
+[C:/Users/Jorge/OneDrive/Documentos/ProyectoFinal/Pages/Consulta/C_ventas.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29uc3VsdGFcQ192ZW50YXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jorge/OneDrive/Escritorio/ProyectoFinal/Pages/Index.razor]
+[C:/Users/Jorge/OneDrive/Documentos/ProyectoFinal/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jorge/OneDrive/Escritorio/ProyectoFinal/Pages/Registro/R_Carro.razor]
+[C:/Users/Jorge/OneDrive/Documentos/ProyectoFinal/Pages/Registro/R_Carro.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cm9cUl9DYXJyby5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jorge/OneDrive/Escritorio/ProyectoFinal/Pages/Registro/R_Cliente.razor]
+[C:/Users/Jorge/OneDrive/Documentos/ProyectoFinal/Pages/Registro/R_Cliente.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cm9cUl9DbGllbnRlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jorge/OneDrive/Escritorio/ProyectoFinal/Pages/Registro/R_venta.razor]
+[C:/Users/Jorge/OneDrive/Documentos/ProyectoFinal/Pages/Registro/R_venta.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cm9cUl92ZW50YS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jorge/OneDrive/Escritorio/ProyectoFinal/Shared/LoginDisplay.razor]
+[C:/Users/Jorge/OneDrive/Documentos/ProyectoFinal/Shared/LoginDisplay.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXExvZ2luRGlzcGxheS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jorge/OneDrive/Escritorio/ProyectoFinal/Shared/SurveyPrompt.razor]
+[C:/Users/Jorge/OneDrive/Documentos/ProyectoFinal/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jorge/OneDrive/Escritorio/ProyectoFinal/_Imports.razor]
+[C:/Users/Jorge/OneDrive/Documentos/ProyectoFinal/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jorge/OneDrive/Escritorio/ProyectoFinal/Shared/MainLayout.razor]
+[C:/Users/Jorge/OneDrive/Documentos/ProyectoFinal/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-06hfg8a6sd
 
-[C:/Users/Jorge/OneDrive/Escritorio/ProyectoFinal/Shared/NavMenu.razor]
+[C:/Users/Jorge/OneDrive/Documentos/ProyectoFinal/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-fx6gbz8hvx
 
-[C:/Users/Jorge/OneDrive/Escritorio/ProyectoFinal/Areas/Identity/Pages/Account/LogOut.cshtml]
+[C:/Users/Jorge/OneDrive/Documentos/ProyectoFinal/Areas/Identity/Pages/Account/LogOut.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dPdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jorge/OneDrive/Escritorio/ProyectoFinal/Areas/Identity/Pages/Shared/_LoginPartial.cshtml]
+[C:/Users/Jorge/OneDrive/Documentos/ProyectoFinal/Areas/Identity/Pages/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jorge/OneDrive/Escritorio/ProyectoFinal/Pages/Error.cshtml]
+[C:/Users/Jorge/OneDrive/Documentos/ProyectoFinal/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jorge/OneDrive/Escritorio/ProyectoFinal/Pages/_Host.cshtml]
+[C:/Users/Jorge/OneDrive/Documentos/ProyectoFinal/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
