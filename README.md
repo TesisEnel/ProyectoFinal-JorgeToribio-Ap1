@@ -2,24 +2,24 @@
 
 Este proyecto es un sistema de ventas de vehículos desarrollado en Blazor Server. Permite el registro de clientes, vehículos y ventas con sus respectivos detalles.
 
-#Características:
+# Características
 Registro de clientes.
 Registro de vehículos.
 Registro de ventas con su detalle.
 Manejo de permisos de usuario.
 
-#Tecnologías utilizadas:
+# Tecnologías utilizadas:
 Blazor Server
 .NET Core 7.0.202
 Entity Framework Core
 Sqlite
 
-#Requisitos previos:
+# Requisitos previos:
 V.S Code
 .NET Core 7.0.202
 Sqlite
 
-#Instrucciones de instalación:
+# Instrucciones de instalación:
 1. Clonar el repositorio:
     1.1 git clone https://github.com/JorgeLT1/ProyectoFinal.git
  
@@ -32,7 +32,7 @@ Sqlite
     4.1 dotnet run/ dotnet watch
 
 
-#Como usar:
+# Como usar:
 
 1. Clonar el repositorio y seguir las instrucciones de instalación que se encuentran en el punto "Instrucciones de instalación".
 2. Ejecutar la aplicación y abrir el navegador web.
@@ -44,6 +44,6 @@ Sqlite
 8. Para registrar una venta, hacer clic en el botón "Registrar venta" y llenar el formulario correspondiente con los datos de la venta y su detalle.
 9. Con estos pasos, podrás utilizar el Sistema de Venta de vehiculos para registrar las ventas y el inventario de tu concesionario.
 
-#Credenciales:
+# Credenciales:
 Cuenta: AutoTG@tgsd.com
 Contraseña: AutoTG12@
