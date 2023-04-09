@@ -312,7 +312,7 @@ public void Eliminar()
         venta.cuota = venta.Monto*( (init * intereses)/ (intereses-1 ));
         venta.VentaDetalle= new List<VentaDetalle>();
         Detalle= new VentaDetalle();
-
+ 
         double cap=venta.Monto;
         for (int i = 0; i < venta.PeriodoTiempo; i++)
         {
