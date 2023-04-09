@@ -20,7 +20,7 @@ public class Carro
     [Range(1, 100000000000, ErrorMessage = "El precio debe ser mayor que cero")]
     public double Precio { get; set; }
     [Required(ErrorMessage = "El lugar es requerido")]
-    public string? Lugar { get; set; } 
+    public string? Lugar { get; set; }
     [Required(ErrorMessage = "El estado del vehiculo es requerido.")]
     public string? Estado { get; set; }
     [Required(ErrorMessage = "El combustible del vehiculo es requerido.")]

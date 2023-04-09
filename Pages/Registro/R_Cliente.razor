@@ -3,73 +3,77 @@
 @inject ClienteBLL clienteBLL
 @inject NotificationService notification
 
- <AuthorizeView Context="Context">
-    <Authorized>  
+<AuthorizeView Context="Context">
+    <Authorized>
 
 
-<EditForm Model="cliente" OnValidSubmit="Guardar">
-    <DataAnnotationsValidator />
+        <EditForm Model="cliente" OnValidSubmit="Guardar">
+            <DataAnnotationsValidator />
 
-<div class="accordion-item">
-    <div class="modal-header">
-        <h1>Registro de Cliente</h1>
-    </div>
+            <div class="accordion-item">
+                <div class="modal-header">
+                    <h1>Registro de Cliente</h1>
+                </div>
 
-    <div class="accordion-body">
-        <div class="row">
-            <div class="col-md-6">
-                <label for="ClienteId">ClienteId</label>
-                <div class="input-group">
-                    <InputNumber type="number" @bind-Value="cliente.ClienteId" class="form-control" />
-                    <button type="button" class="btn btn-outline-primary" @onclick="Buscar"><span class="oi oi-magnifying-glass"></span></button>
+                <div class="accordion-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="ClienteId">ClienteId</label>
+                            <div class="input-group">
+                                <InputNumber type="number" @bind-Value="cliente.ClienteId" class="form-control" />
+                                <button type="button" class="btn btn-outline-primary" @onclick="Buscar"><span
+                                        class="oi oi-magnifying-glass"></span></button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="Fecha" class="form-label">Fecha</label>
+                            <InputDate @bind-Value="cliente.Fecha" class="form-control" id="Modelo" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="Nombre" class="form-label">Nombre</label>
+                            <InputText type="text" @bind-Value="cliente.Nombre" class="form-control" id="Modelo" />
+                            <ValidationMessage For="@(() => cliente.Nombre)" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="Apellido">Apellido</label>
+                            <InputText type="text" @bind-Value="cliente.Apellido" class="form-control" />
+                            <ValidationMessage For="@(() => cliente.Apellido)" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="CorreoElectronico">Correo Electronico</label>
+                            <InputText type="text" @bind-Value="cliente.CorreoElectronico" class="form-control" />
+                            <ValidationMessage For="@(() => cliente.CorreoElectronico)" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="Telefono">Telefono</label>
+                            <InputText type="text" @bind-Value="cliente.Telefono" class="form-control" />
+                            <ValidationMessage For="@(() => cliente.Telefono)" />
+                        </div>
+                    </div>
+                </div>
+
+                @*Botones*@
+                <hr>
+                <div class="text-center">
+                    <button type="button" class="btn btn-outline-primary" @onclick="Nuevo"><span
+                            class="oi oi-file"></span> Nuevo</button>
+                    <button type="submit" class="btn btn-outline-success"><span class="oi oi-document"></span>
+                        Guardar</button>
+                    <button type="button" class="btn btn-outline-danger" @onclick="Eliminar"><span
+                            class="oi oi-delete"></span> Eliminar</button>
+                    <br>
+                    <br>
                 </div>
             </div>
-            <div class="col-md-6">
-                <label for="Fecha" class="form-label">Fecha</label>
-                <InputDate @bind-Value="cliente.Fecha" class="form-control" id="Modelo" />
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <label for="Nombre" class="form-label">Nombre</label>
-                <InputText type="text" @bind-Value="cliente.Nombre" class="form-control" id="Modelo" />
-                <ValidationMessage For="@(() => cliente.Nombre)" />
-            </div>
-
-            <div class="col-md-6">
-                <label for="Apellido">Apellido</label>
-                <InputText type="text" @bind-Value="cliente.Apellido" class="form-control" />
-                <ValidationMessage For="@(() => cliente.Apellido)" />
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <label for="CorreoElectronico">Correo Electronico</label>
-                <InputText type="text" @bind-Value="cliente.CorreoElectronico" class="form-control" />
-                <ValidationMessage For="@(() => cliente.CorreoElectronico)" />
-            </div>
-
-            <div class="col-md-6">
-                <label for="Telefono">Telefono</label>
-                <InputText type="text" @bind-Value="cliente.Telefono" class="form-control" />
-                <ValidationMessage For="@(() => cliente.Telefono)" />
-            </div>
-        </div>
-    </div>
-
-@*Botones*@
-<hr>
-        <div class="text-center">
-            <button type="button" class="btn btn-outline-primary" @onclick="Nuevo"><span class="oi oi-file"></span> Nuevo</button>
-            <button type="submit" class="btn btn-outline-success"><span class="oi oi-document"></span> Guardar</button>
-            <button type="button" class="btn btn-outline-danger" @onclick="Eliminar"><span class="oi oi-delete"></span> Eliminar</button>
-        <br>
-        <br>
-        </div>
-    </div>
-</EditForm>
+        </EditForm>
 
 
     </Authorized>
@@ -87,18 +91,18 @@
 </AuthorizeView>
 @code {
     [Parameter]
-    public int clienteId {get; set; }
+    public int clienteId { get; set; }
 
-    public Cliente cliente {get; set; } = new Cliente();
+    public Cliente cliente { get; set; } = new Cliente();
 
     protected override void OnInitialized()
     {
-        if(clienteId > 0)
+        if (clienteId > 0)
         {
             this.cliente.ClienteId = clienteId;
             this.Buscar();
         }
-    } 
+    }
     private void Buscar()
     {
         var encontrado = clienteBLL.Buscar(cliente.ClienteId);
@@ -107,20 +111,21 @@
         {
             cliente = encontrado;
             ShowNotification(
-                new NotificationMessage
-                    {
-                        Severity = NotificationSeverity.Success,
-                        Summary = "Se ha encontrado con éxito."
-                    });
+            new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Success,
+                    Summary = "Se ha encontrado con éxito."
+                });
 
         }
-        else{
+        else
+        {
             ShowNotification(
-                new NotificationMessage
-                    {
-                        Severity = NotificationSeverity.Warning,
-                        Summary = "Error, verifique el Id."
-                    }); 
+            new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Warning,
+                    Summary = "Error, verifique el Id."
+                });
         }
     }
 
@@ -138,32 +143,32 @@
             if (guardado)
             {
                 ShowNotification(
-                    new NotificationMessage
-                        {
-                            Severity = NotificationSeverity.Success,
-                            Summary = "Guardado con éxito."
-                        });
+                new NotificationMessage
+                    {
+                        Severity = NotificationSeverity.Success,
+                        Summary = "Guardado con éxito."
+                    });
                 Nuevo();
             }
             else
             {
                 ShowNotification(
-                    new NotificationMessage
-                        {
-                            Severity = NotificationSeverity.Error,
-                            Summary = "ERROR!!. Favor revisar los campos."
-                        });
-                Nuevo(); 
+                new NotificationMessage
+                    {
+                        Severity = NotificationSeverity.Error,
+                        Summary = "ERROR!!. Favor revisar los campos."
+                    });
+                Nuevo();
             }
         }
     }
 
     public void Eliminar()
     {
-        if(clienteBLL.Eliminar(cliente))
+        if (clienteBLL.Eliminar(cliente))
         {
             ShowNotification(
-                new NotificationMessage
+            new NotificationMessage
                 {
                     Severity = NotificationSeverity.Success,
                     Summary = "No hay nada para eliminar"
@@ -174,7 +179,7 @@
         else
         {
             ShowNotification(
-                new NotificationMessage
+            new NotificationMessage
                 {
                     Severity = NotificationSeverity.Error,
                     Summary = "Error"
@@ -192,7 +197,7 @@
             foreach (var validationResult in validationResults)
             {
                 ShowNotification(
-                    new NotificationMessage
+                new NotificationMessage
                     {
                         Severity = NotificationSeverity.Error,
                         Summary = validationResult.ErrorMessage

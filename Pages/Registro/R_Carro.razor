@@ -3,152 +3,155 @@
 @inject CarroBLL carroBLL
 @inject NotificationService notification
 
- <AuthorizeView Context="Context">
-    <Authorized>  
+<AuthorizeView Context="Context">
+    <Authorized>
 
-<EditForm Model="carro" OnValidSubmit="Guardar">
-    <DataAnnotationsValidator />
+        <EditForm Model="carro" OnValidSubmit="Guardar">
+            <DataAnnotationsValidator />
 
-<div class="accordion-item">
-    <div class="modal-header">
-        <h1>Registro de Vehículo</h1>
-    </div>
+            <div class="accordion-item">
+                <div class="modal-header">
+                    <h1>Registro de Vehículo</h1>
+                </div>
 
-    <div class="accordion-body">
-        <div class="row">
-            <div class="col-md-6">
-                <label for="CarroId">VehículoId</label>
-                <div class="input-group">
-                    <InputNumber @bind-Value="carro.CarroId" class="form-control" />
-                    <button type="button" class="btn btn-outline-primary" @onclick="Buscar">
-                        <span class="oi oi-magnifying-glass"></span>
-                    </button>
+                <div class="accordion-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="CarroId">VehículoId</label>
+                            <div class="input-group">
+                                <InputNumber @bind-Value="carro.CarroId" class="form-control" />
+                                <button type="button" class="btn btn-outline-primary" @onclick="Buscar">
+                                    <span class="oi oi-magnifying-glass"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="Fecha" class="form-label">Fecha</label>
+                            <InputDate @bind-Value="carro.Fecha" class="form-control" id="Modelo" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="Marca">Marca</label>
+                            <InputText @bind-Value="carro.Marca" class="form-control" />
+                            <ValidationMessage For="@(() => carro.Marca)" />
+                        </div>
+                        <div class="col-md-6">
+                            <label for="Modelo" class="form-label">Modelo</label>
+                            <InputText @bind-Value="carro.Modelo" class="form-control" id="Modelo" />
+                            <ValidationMessage For="@(() => carro.Modelo)" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="Color">Color</label>
+                            <InputText @bind-Value="carro.Color" class="form-control" />
+                            <ValidationMessage For="@(() => carro.Color)" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="Motor">Motor</label>
+                            <InputText @bind-Value="carro.Motor" class="form-control" />
+                            <ValidationMessage For="@(() => carro.Motor)" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="Anio">Año</label>
+                            <InputNumber @bind-Value="carro.Anio" class="form-control" />
+                            <ValidationMessage For="@(() => carro.Anio)" />
+                        </div>
+                        <div class="col-md-6">
+                            <label for="Precio">Precio</label>
+                            <InputNumber @bind-Value="carro.Precio" class="form-control" />
+                            <ValidationMessage For="@(() => carro.Precio)" />
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="Estado" class="form-label">Estado</label>
+                            <InputSelect @bind-Value="carro.Estado" class="form-control">
+                                <option value="Null">--</option>
+                                <option value="Nuevo">Nuevo</option>
+                                <option value="Usado">Usado</option>
+                            </InputSelect>
+                            <ValidationMessage For="@(() => carro.Estado)" />
+                        </div>
+                        <div class="col-md-6">
+                            <label for="Lugar">Lugar</label>
+                            <InputText @bind-Value="carro.Lugar" class="form-control" />
+                            <ValidationMessage For="@(() => carro.Lugar)" />
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="Combustible" class="form-label">Combustible</label>
+                            <InputSelect @bind-Value="carro.Combustible" class="form-control">
+                                <option value="Null">--</option>
+                                <option value="Gasolina">Gasolina</option>
+                                <option value="Diésel">Diésel</option>
+                                <option value="Gas natural">Gas natural</option>
+                                <option value="Etanol">Etanol</option>
+                                <option value="Biodiesel">Biodiesel</option>
+                                <option value="Hidrógeno">Hidrógeno</option>
+                                <option value="Propano">Propano</option>
+                                <option value="Electricidad">Electricidad</option>
+
+                            </InputSelect>
+                            <ValidationMessage For="@(() => carro.Combustible)" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="TipoDeVechiculo">Tipo de vechiculo</label>
+                            <InputText @bind-Value="carro.TipoVehiculo" class="form-control" />
+                            <ValidationMessage For="@(() => carro.TipoVehiculo)" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="Transmisión">Transmisión</label>
+                            <InputSelect @bind-Value="carro.Transmision" class="form-control">
+                                <option value="Null">--</option>
+                                <option value="Transmisión manual">Transmisión manual</option>
+                                <option value="Transmisión automática">Transmisión automática</option>
+                            </InputSelect>
+                            <ValidationMessage For="@(() => carro.Transmision)" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="Cantidad" class="form-label">Cantidad de pasajeros</label>
+                            <InputNumber @bind-Value="carro.CaantidadPasajeros" class="form-control" />
+                            <ValidationMessage For="@(() => carro.CaantidadPasajeros)" />
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+                @*Botones*@
+                <hr>
+                <div class="text-center">
+                    <button type="button" class="btn btn-outline-primary" @onclick="Nuevo"><span
+                            class="oi oi-file"></span> Nuevo</button>
+                    <button type="submit" class="btn btn-outline-success"><span class="oi oi-document"></span>
+                        Guardar</button>
+                    <button type="button" class="btn btn-outline-danger" @onclick="Eliminar"><span
+                            class="oi oi-delete"></span> Eliminar</button>
+                    <br>
+                    <br>
                 </div>
             </div>
-            <div class="col-md-6">
-                <label for="Fecha" class="form-label">Fecha</label>
-                <InputDate @bind-Value="carro.Fecha" class="form-control" id="Modelo" />
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <label for="Marca">Marca</label>
-                <InputText @bind-Value="carro.Marca" class="form-control" />
-                <ValidationMessage For="@(() => carro.Marca)" />
-            </div>
-            <div class="col-md-6">
-                <label for="Modelo" class="form-label">Modelo</label>
-                <InputText @bind-Value="carro.Modelo" class="form-control" id="Modelo" />
-                <ValidationMessage For="@(() => carro.Modelo)" />
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <label for="Color">Color</label>
-                <InputText @bind-Value="carro.Color" class="form-control" />
-                <ValidationMessage For="@(() => carro.Color)" />
-            </div>
-
-            <div class="col-md-6">
-                <label for="Motor">Motor</label>
-                <InputText @bind-Value="carro.Motor" class="form-control" />
-                <ValidationMessage For="@(() => carro.Motor)" />
-            </div>
-        </div>
-
-        <div class="row">
-             <div class="col-md-6">
-                <label for="Anio">Año</label>
-                <InputNumber @bind-Value="carro.Anio" class="form-control" />
-                <ValidationMessage For="@(() => carro.Anio)" />
-            </div>
-            <div class="col-md-6">
-                <label for="Precio">Precio</label>
-                <InputNumber @bind-Value="carro.Precio" class="form-control" />
-                <ValidationMessage For="@(() => carro.Precio)" />
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <label for="Estado" class="form-label">Estado</label>
-                <InputSelect @bind-Value = "carro.Estado" class="form-control">
-                <option value="Null">--</option>
-                <option value="Nuevo">Nuevo</option>
-                <option value="Usado">Usado</option>
-                </InputSelect>
-                <ValidationMessage For="@(() => carro.Estado)" />
-            </div>
-           <div class="col-md-6">
-                <label for="Lugar">Lugar</label>
-                <InputText @bind-Value="carro.Lugar" class="form-control" />
-                <ValidationMessage For="@(() => carro.Lugar)" />
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <label for="Combustible" class="form-label">Combustible</label>
-                <InputSelect @bind-Value = "carro.Combustible" class="form-control">
-                <option value="Null">--</option>
-                <option value="Gasolina">Gasolina</option>
-                <option value="Diésel">Diésel</option>
-                <option value="Gas natural">Gas natural</option>
-                <option value="Etanol">Etanol</option>
-                <option value="Biodiesel">Biodiesel</option>
-                <option value="Hidrógeno">Hidrógeno</option>
-                <option value="Propano">Propano</option>
-                <option value="Electricidad">Electricidad</option>
-
-                </InputSelect>
-                <ValidationMessage For="@(() => carro.Combustible)" />
-            </div>
-
-            <div class="col-md-6">
-                <label for="TipoDeVechiculo">Tipo de vechiculo</label>
-                <InputText @bind-Value="carro.TipoVehiculo" class="form-control" />
-                <ValidationMessage For="@(() => carro.TipoVehiculo)" />
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <label for="Transmisión">Transmisión</label>
-                <InputSelect @bind-Value = "carro.Transmision" class="form-control">
-                <option value="Null">--</option>
-                <option value="Transmisión manual">Transmisión manual</option>
-                <option value="Transmisión automática">Transmisión automática</option>
-                </InputSelect>
-                <ValidationMessage For="@(() => carro.Transmision)" />
-            </div>
-
-            <div class="col-md-6">
-                <label for="Cantidad" class="form-label">Cantidad de pasajeros</label>
-                <InputNumber @bind-Value="carro.CaantidadPasajeros" class="form-control" />
-                <ValidationMessage For="@(() => carro.CaantidadPasajeros)" />
-            </div>
-        </div>
-
-
-    </div>
-
-
-
-@*Botones*@
-<hr>
-        <div class="text-center">
-            <button type="button" class="btn btn-outline-primary" @onclick="Nuevo"><span class="oi oi-file"></span> Nuevo</button>
-            <button type="submit" class="btn btn-outline-success"><span class="oi oi-document"></span> Guardar</button>
-            <button type="button" class="btn btn-outline-danger" @onclick="Eliminar"><span class="oi oi-delete"></span> Eliminar</button>
-        <br>
-        <br>
-        </div>
-    </div>
-</EditForm>
+        </EditForm>
 
 
     </Authorized>
@@ -166,18 +169,18 @@
 </AuthorizeView>
 @code {
     [Parameter]
-    public int carroId {get; set; }
+    public int carroId { get; set; }
 
-    public Carro carro {get; set; } = new Carro();
+    public Carro carro { get; set; } = new Carro();
 
     protected override void OnInitialized()
     {
-        if(carroId > 0)
+        if (carroId > 0)
         {
             this.carro.CarroId = carroId;
             this.Buscar();
         }
-    } 
+    }
     private void Buscar()
     {
         var encontrado = carroBLL.Buscar(carro.CarroId);
@@ -186,20 +189,21 @@
         {
             carro = encontrado;
             ShowNotification(
-                new NotificationMessage
-                    {
-                        Severity = NotificationSeverity.Success,
-                        Summary = "Se ha encontrado con éxito."
-                    });
+            new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Success,
+                    Summary = "Se ha encontrado con éxito."
+                });
 
         }
-        else{
+        else
+        {
             ShowNotification(
-                new NotificationMessage
-                    {
-                        Severity = NotificationSeverity.Warning,
-                        Summary = "Error, verifique el Id."
-                    }); 
+            new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Warning,
+                    Summary = "Error, verifique el Id."
+                });
         }
     }
 
@@ -217,32 +221,32 @@
             if (guardado)
             {
                 ShowNotification(
-                    new NotificationMessage
-                        {
-                            Severity = NotificationSeverity.Success,
-                            Summary = "Guardado con éxito."
-                        });
+                new NotificationMessage
+                    {
+                        Severity = NotificationSeverity.Success,
+                        Summary = "Guardado con éxito."
+                    });
                 Nuevo();
             }
             else
             {
                 ShowNotification(
-                    new NotificationMessage
-                        {
-                            Severity = NotificationSeverity.Error,
-                            Summary = "ERROR!!. Favor revisar los campos."
-                        });
-                Nuevo(); 
+                new NotificationMessage
+                    {
+                        Severity = NotificationSeverity.Error,
+                        Summary = "ERROR!!. Favor revisar los campos."
+                    });
+                Nuevo();
             }
         }
     }
 
     public void Eliminar()
     {
-        if(carroBLL.Eliminar(carro))
+        if (carroBLL.Eliminar(carro))
         {
             ShowNotification(
-                new NotificationMessage
+            new NotificationMessage
                 {
                     Severity = NotificationSeverity.Success,
                     Summary = "No hay nada para eliminar"
@@ -253,7 +257,7 @@
         else
         {
             ShowNotification(
-                new NotificationMessage
+            new NotificationMessage
                 {
                     Severity = NotificationSeverity.Error,
                     Summary = "Error"
@@ -271,7 +275,7 @@
             foreach (var validationResult in validationResults)
             {
                 ShowNotification(
-                    new NotificationMessage
+                new NotificationMessage
                     {
                         Severity = NotificationSeverity.Error,
                         Summary = validationResult.ErrorMessage

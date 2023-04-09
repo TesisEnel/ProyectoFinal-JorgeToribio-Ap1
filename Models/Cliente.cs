@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 
-public class Cliente {
+public class Cliente
+{
     [Key]
     public int ClienteId { get; set; }
     public DateOnly Fecha { get; set; } = DateOnly.FromDateTime(DateTime.Now);
