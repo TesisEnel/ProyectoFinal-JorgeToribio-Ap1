@@ -1,8 +1,8 @@
 @page "/c_carro"
 @inject CarroBLL carroBLL;
 
-<EditForm Model="lista">
-    <DataAnnotationsValidator />
+<AuthorizeView Contexto="Contexto">
+    <Authorized>
     <div class="card">
         <div class="card-header">
             <h1>Consulta de productos</h1>
@@ -32,6 +32,19 @@
                         <option value="13">Todo</option>
                     </select>
                     <button type="button" class="btn btn-outline-primary" @onclick="Buscar"><i class="oi oi-magnifying-glass" /></button>  
+                </div>
+                <div class="row">
+
+                     <div class="Form-group col-10" >
+                        <span class="form-group ">Desde</span>
+                        <InputDate @bind-Value="FechaInicial" class="form-control" />
+                    </div>
+
+
+                    <div class="Form-group col-10" >
+                        <span class="form-group">Hasta</span>
+                        <InputDate @bind-Value="FechaFinal" class="form-control"/>
+                    </div>
                 </div>
                 </div>
             </div>
@@ -73,54 +86,82 @@
                         <td>@item.Transmision</td>   
                         <td>@item.TipoVehiculo</td>   
                         <td>@item.CaantidadPasajeros</td>   
+                    <td><a href="carro/@item.CarroId">Ver</a></td>
+
                    </tr>                   
                 }  
             </tbody>
         </table>
     </div>
-</EditForm>
+    </Authorized>
+    <NotAuthorized>
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <h1 class="text">Inicio de sesión</h1>
+                    <p>Para acceder a esta página, es necesario iniciar sesión con una cuenta autorizada.</p>
+                    <a href="Identity/Account/Login"><button class="btn btn-primary">Iniciar sesión</button></a>
+                </div>
+            </div>
+        </div>
+    </NotAuthorized>
+</AuthorizeView>    
 
 @code
 {
     public string Criterio { get; set; } = "";
     public string Filtro { get; set; } = "";
     public List<Carro> lista { get; set; } = new List<Carro>();
+    public DateOnly? FechaInicial { get; set; } = new DateOnly(2010,4,12);
+    public DateOnly? FechaFinal { get; set; } = DateOnly.FromDateTime(DateTime.Now);
+
 
     protected override void OnInitialized()
     {
         Buscar();
+        Filtro = "0";
+        lista = carroBLL.GetList(e => true);
     }
+    
 
     public void Buscar()
     {
-        switch (Filtro)
+        if(Criterio!=null)
         {
-            case "1":
-                lista = carroBLL.GetList(o => o.CarroId.ToString().Contains(Criterio.ToLower())); break;
-            case "2":
-                lista = carroBLL.GetList(p => p.Marca!.ToLower().Contains(Criterio.ToLower())); break;
-            case "3":
-                lista = carroBLL.GetList(p => p.Modelo!.ToLower().Contains(Criterio.ToLower())); break;
-            case "4":
-                lista = carroBLL.GetList(p => p.Color!.ToLower().Contains(Criterio.ToLower())); break;
-            case "5":
-                lista = carroBLL.GetList(p => p.Motor!.ToLower().Contains(Criterio.ToLower())); break;
-            case "6":
-                lista = carroBLL.GetList(o => o.Anio!.ToString().Contains(Criterio.ToLower())); break;
-            case "7":
-                lista = carroBLL.GetList(o => o.Precio!.ToString().Contains(Criterio.ToLower())); break;
-            case "8":
-                lista = carroBLL.GetList(p => p.Lugar!.ToLower().Contains(Criterio.ToLower())); break;
-            case "9":
-                lista = carroBLL.GetList(p => p.Estado!.ToLower().Contains(Criterio.ToLower())); break;
-            case "10":
-                lista = carroBLL.GetList(p => p.Combustible!.ToLower().Contains(Criterio.ToLower())); break;
-            case "11":
-                lista = carroBLL.GetList(p => p.Transmision!.ToLower().Contains(Criterio.ToLower())); break;
-            case "12":
-                lista = carroBLL.GetList(p => p.TipoVehiculo!.ToLower().Contains(Criterio.ToLower())); break;
-            default:
-                lista = carroBLL.GetList(o => true); break;
+            switch (Filtro)
+            {
+                case "1":
+                    lista = carroBLL.GetList(o => o.CarroId.ToString().Contains(Criterio.ToLower())); break;
+                case "2":
+                    lista = carroBLL.GetList(p => p.Marca!.ToLower().Contains(Criterio.ToLower())); break;
+                case "3":
+                    lista = carroBLL.GetList(p => p.Modelo!.ToLower().Contains(Criterio.ToLower())); break;
+                case "4":
+                    lista = carroBLL.GetList(p => p.Color!.ToLower().Contains(Criterio.ToLower())); break;
+                case "5":
+                    lista = carroBLL.GetList(p => p.Motor!.ToLower().Contains(Criterio.ToLower())); break;
+                case "6":
+                    lista = carroBLL.GetList(o => o.Anio!.ToString().Contains(Criterio.ToLower())); break;
+                case "7":
+                    lista = carroBLL.GetList(o => o.Precio!.ToString().Contains(Criterio.ToLower())); break;
+                case "8":
+                    lista = carroBLL.GetList(p => p.Lugar!.ToLower().Contains(Criterio.ToLower())); break;
+                case "9":
+                    lista = carroBLL.GetList(p => p.Estado!.ToLower().Contains(Criterio.ToLower())); break;
+                case "10":
+                    lista = carroBLL.GetList(p => p.Combustible!.ToLower().Contains(Criterio.ToLower())); break;
+                case "11":
+                    lista = carroBLL.GetList(p => p.Transmision!.ToLower().Contains(Criterio.ToLower())); break;
+                case "12":
+                    lista = carroBLL.GetList(p => p.TipoVehiculo!.ToLower().Contains(Criterio.ToLower())); break;
+                default:
+                    lista = carroBLL.GetList(o => true); break;
+            }
         }
-    }
+        else
+        {  
+            lista = carroBLL.GetList(e => e.Fecha >= FechaInicial && e.Fecha <= FechaFinal);
+        }
+
+    } 
 }

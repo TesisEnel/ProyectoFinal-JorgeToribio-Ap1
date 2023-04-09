@@ -1,3 +1,31 @@
 ﻿@page "/"
 
 
+<PageTitle>Main</PageTitle>
+
+<AuthorizeView Context="Context">
+    <Authorized>
+        <div class="text-center">
+            <h1 style="color: rgb(212, 14, 40);">Bienvenido al concesionario</h1>
+            <h1  style="color: rgb(26, 13, 83);">AutoTG</h1>
+            <h5 style="color: rgb(13, 83, 65);">Jorge Luis Toribio Gil(2021-0133)</h5>
+        </div>
+
+    </Authorized>
+    <NotAuthorized>
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <h1 class="text">Inicio de sesión</h1>
+                    <p>Para acceder a esta página, es necesario iniciar sesión con una cuenta autorizada.</p>
+                    <a href="Identity/Account/Login"><button class="btn btn-primary">Iniciar sesión</button></a>
+                </div>
+            </div>
+        </div>
+    </NotAuthorized>
+</AuthorizeView>
+
+<Style>
+
+    
+</Style>
