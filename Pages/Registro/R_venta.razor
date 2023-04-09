@@ -5,6 +5,9 @@
 @inject CarroBLL carroBLL
 @inject NotificationService notification
 
+ <AuthorizeView Context="Context">
+    <Authorized>  
+
 <EditForm Model="venta" OnValidSubmit="Guardar">
     <DataAnnotationsValidator />
 @*Registro de ventas*@
@@ -153,6 +156,21 @@
 </div>
 
 </EditForm>
+
+
+    </Authorized>
+        <NotAuthorized>
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <h1 class="text">Inicio de sesión</h1>
+                    <p>Para acceder a esta página, es necesario iniciar sesión con una cuenta autorizada.</p>
+                    <a href="Identity/Account/Login"><button class="btn btn-primary">Iniciar sesión</button></a>
+                </div>
+            </div>
+        </div>
+    </NotAuthorized>
+</AuthorizeView>
 @code {
     [Parameter]
     public int ventaId {get; set; }
