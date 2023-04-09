@@ -21,15 +21,15 @@ Sqlite
 
 # Instrucciones de instalación:
 1. Clonar el repositorio:
-    1.1 git clone https://github.com/JorgeLT1/ProyectoFinal.git
+     git clone https://github.com/JorgeLT1/ProyectoFinal.git
  
 2. Ir a la carpeta del proyecto:
-    2.1 cd tu-proyecto
+     cd tu-proyecto
  
 3. Restaurar las dependencias del proyecto:
-    3.1 dotnet restore
+     dotnet restore
 4. Ejecutar la aplicación:
-    4.1 dotnet run/ dotnet watch
+     dotnet run/ dotnet watch
 
 
 # Como usar:
