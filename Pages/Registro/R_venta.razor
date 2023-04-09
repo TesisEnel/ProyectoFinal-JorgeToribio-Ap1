@@ -178,6 +178,7 @@
     public Cliente cliente { get; set; } = new Cliente();
     public VentaDetalle Detalle = new VentaDetalle();
     public Venta venta {get; set; } = new Venta();
+    public bool Save { get; set; } = false;
 
     protected override void OnInitialized()
     {
@@ -216,6 +217,17 @@
     }
     public void Guardar()
     {
+        if(Save == false)
+        {
+
+                ShowNotification(
+                    new NotificationMessage
+                        {
+                            Severity = NotificationSeverity.Error,
+                            Summary = "Verifica que el detalle este realizado."
+                        });
+                        return;
+        }
         if (Validar())
         {
             var guardado = ventaBLL.Guardar(venta);
@@ -341,6 +353,7 @@ public void Eliminar()
             venta.VentaDetalle.Add(Detalle);
             Detalle.Capital=cap;
             cap= Detalle.ValorAdeudado;
+            Save = true;
             Detalle= new VentaDetalle();
             
         }
