@@ -216,7 +216,7 @@
     }
     public void Guardar()
     {
-        if (ValidarProducto())
+        if (Validar())
         {
             var guardado = ventaBLL.Guardar(venta);
 
@@ -276,7 +276,7 @@ public void Eliminar()
     }
 }
 
-    public bool ValidarProducto()
+    public bool Validar()
     {
         if (!String.IsNullOrEmpty(venta.Concepto))
         {
