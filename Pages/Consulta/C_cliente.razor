@@ -32,6 +32,19 @@
                 </div>
                 </div>
             </div>
+                <div class="row">
+
+                     <div class="Form-group col-2" >
+                        <span class="form-group ">Desde</span>
+                        <InputDate @bind-Value="FechaInicial" class="form-control" />
+                    </div>
+
+
+                    <div class="Form-group col-2" >
+                        <span class="form-group">Hasta</span>
+                        <InputDate @bind-Value="FechaFinal" class="form-control"/>
+                    </div>
+                </div>
         </div>
         <table class="table">
             <thead>
@@ -83,7 +96,8 @@
     public string Criterio { get; set; } = "";
     public string Filtro { get; set; } = "";
     public List<Cliente> lista { get; set; } = new List<Cliente>();
-
+    public DateOnly? FechaInicial { get; set; } = new DateOnly(2010,4,12);
+    public DateOnly? FechaFinal { get; set; } = DateOnly.FromDateTime(DateTime.Now);
     protected override void OnInitialized()
     {
         Buscar();
