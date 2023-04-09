@@ -9,7 +9,7 @@
     <DataAnnotationsValidator />
     <div class="card">
         <div class="card-header">
-            <h1>Consulta de productos</h1>
+            <h1>Consulta de Vehiculos</h1>
         </div>
             <div class="card-body">
                 <div class="row">
@@ -21,7 +21,7 @@
                     <label class="form-label">Filtro</label>
                     <div class = "input-group">
                     <select class="form-control" @bind="Filtro">
-                        <option value="1">CarroId</option>
+                        <option value="1">VehículoId</option>
                         <option value="2">Marca</option>
                         <option value="3">Modelo</option>
                         <option value="4">Color</option>
@@ -57,7 +57,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Carro ID</th>
+                    <th>VehículoId</th>
                     <th>Fecha</th>
                     <th>Marca</th>
                     <th>Modelo</th>                  
@@ -161,8 +161,8 @@
                 default:
                     lista = carroBLL.GetList(o => true); break;
             }
-        }
+     }
 
 
-    } 
-}
+} 
+
