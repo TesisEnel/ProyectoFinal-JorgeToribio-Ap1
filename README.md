@@ -48,6 +48,9 @@ Sqlite
 
 ![image](https://user-images.githubusercontent.com/107946797/230840430-d860b1e0-b0a0-4901-98de-623601468069.png)
 
+# Autoevaluación:
+![image](https://user-images.githubusercontent.com/107946797/230846590-a98051af-26b5-4100-80a2-5eac6995c5e8.png)
+
 # Credenciales:
 Cuenta: AutoTG@tgsd.com
 Contraseña: AutoTG12@
