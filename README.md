@@ -44,6 +44,10 @@ Sqlite
 8. Para registrar una venta, hacer clic en el botón "Registrar venta" y llenar el formulario correspondiente con los datos de la venta y su detalle.
 9. Con estos pasos, podrás utilizar el Sistema de Venta de vehiculos para registrar las ventas y el inventario de tu concesionario.
 
+# Diagrama de base de datos:
+
+![image](https://user-images.githubusercontent.com/107946797/230840430-d860b1e0-b0a0-4901-98de-623601468069.png)
+
 # Credenciales:
 Cuenta: AutoTG@tgsd.com
 Contraseña: AutoTG12@
