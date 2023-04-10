@@ -110,7 +110,8 @@
             case "5":
                 lista = ventaBLL.GetList(p => p.Concepto!.ToLower().Contains(Criterio.ToLower())); break;
             default:
-                lista = ventaBLL.GetList(o => true); break;
+                lista = ventaBLL.GetList(o => o.Fecha >= FechaInicial && o.Fecha <= FechaFinal);
+                    break;   
         }
     }
 }

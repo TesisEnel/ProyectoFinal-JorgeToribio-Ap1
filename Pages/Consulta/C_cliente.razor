@@ -118,7 +118,8 @@
             case "5":
                 lista = ClienteBLL.GetList(p => p.Telefono!.ToLower().Contains(Criterio.ToLower())); break;
             default:
-                lista = ClienteBLL.GetList(o => true); break;
+                 lista = ClienteBLL.GetList(o => o.Fecha >= FechaInicial && o.Fecha <= FechaFinal);
+                    break;        
         }
     }
 }

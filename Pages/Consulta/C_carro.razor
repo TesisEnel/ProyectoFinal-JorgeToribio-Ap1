@@ -159,7 +159,8 @@
                 case "12":
                     lista = carroBLL.GetList(p => p.TipoVehiculo!.ToLower().Contains(Criterio.ToLower())); break;
                 default:
-                    lista = carroBLL.GetList(o => true); break;
+                    lista = carroBLL.GetList(o => o.Fecha >= FechaInicial && o.Fecha <= FechaFinal);
+                    break;
             }
      }
 
