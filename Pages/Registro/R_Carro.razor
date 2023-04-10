@@ -17,7 +17,7 @@
                 <div class="accordion-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="CarroId">VehículoId</label>
+                            <label for="CarroId">Id</label>
                             <div class="input-group">
                                 <InputNumber @bind-Value="carro.CarroId" class="form-control" />
                                 <button type="button" class="btn btn-outline-primary" @onclick="Buscar">
@@ -109,8 +109,15 @@
                         </div>
 
                         <div class="col-md-6">
-                            <label for="TipoDeVechiculo">Tipo de vechiculo</label>
-                            <InputText @bind-Value="carro.TipoVehiculo" class="form-control" />
+                            <label for="TipoVehiculo">Tipo Vehículo</label>
+                            <InputSelect @bind-Value="carro.TipoVehiculo" class="form-control">
+                                <option value="Null">--</option>
+                                <option value="Deportivo">Deportivo</option>
+                                <option value="Lujo">Lujo</option>
+                                <option value="Casual">Casual</option>
+                                <option value="Basico">Basico</option>
+                                <option value="Prime">Prime</option>
+                            </InputSelect>
                             <ValidationMessage For="@(() => carro.TipoVehiculo)" />
                         </div>
                     </div>
