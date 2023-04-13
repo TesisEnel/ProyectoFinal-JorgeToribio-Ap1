@@ -23,4 +23,8 @@ public class Cliente
     [Required(ErrorMessage = "El teléfono es requerido.")]
     [RegularExpression(@"^\d{8,10}$", ErrorMessage = "El teléfono debe ser un número de 8 a 10 dígitos.")]
     public string? Telefono { get; set; }
+
+    [Required(ErrorMessage = "El balance es requerido")]
+    [Range(1, 100000000000, ErrorMessage = "El balance debe ser mayor que cero")]
+    public double balance { get; set; }
 }

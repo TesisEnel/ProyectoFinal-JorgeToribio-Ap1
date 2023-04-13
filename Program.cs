@@ -23,6 +23,7 @@ builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddScoped<CarroBLL>();
 builder.Services.AddScoped<ClienteBLL>();
 builder.Services.AddScoped<VentaBLL>();
+builder.Services.AddScoped<PagoBLL>();
 builder.Services.AddScoped<DialogService>();
 builder.Services.AddScoped<NotificationService>();
 builder.Services.AddScoped<TooltipService>();

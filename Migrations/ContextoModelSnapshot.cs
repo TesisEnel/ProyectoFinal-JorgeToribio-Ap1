@@ -102,9 +102,32 @@ namespace ProyectoFinal.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<double>("balance")
+                        .HasColumnType("REAL");
+
                     b.HasKey("ClienteId");
 
                     b.ToTable("Cliente");
+                });
+
+            modelBuilder.Entity("Pago", b =>
+                {
+                    b.Property<int>("PagoId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Concepto")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateOnly>("Fecha")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("clienteId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("PagoId");
+
+                    b.ToTable("Pago");
                 });
 
             modelBuilder.Entity("Venta", b =>

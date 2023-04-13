@@ -42,7 +42,7 @@
                     <InputSelect class="form-select" @bind-Value="venta.ClienteId">
                         @foreach (Cliente item in clienteBLL.GetList(o => true))
                         {
-                            <option value="@item.ClienteId">@item.ClienteId @item.Nombre @item.Apellido</option>
+                            <option value="@item.ClienteId">@item.ClienteId @item.Nombre @item.Apellido @item.balance</option>
                         }
                     </InputSelect>
                     <ValidationMessage For="@(() => venta.ClienteId)" />

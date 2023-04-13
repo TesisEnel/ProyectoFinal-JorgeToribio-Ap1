@@ -1,64 +1,61 @@
-@page "/cliente"
-@page "/Cliente/{ClienteId:int}"
+@page "/pago"
+@page "/Pago/{PagoId:int}"
+@inject PagoBLL pagoBLL
+@inject VentaBLL ventaBLL
 @inject ClienteBLL clienteBLL
 @inject NotificationService notification
 
 <AuthorizeView Context="Context">
     <Authorized>
-
-
-        <EditForm Model="cliente" OnValidSubmit="Guardar">
+        <EditForm Model="pago" OnValidSubmit="Guardar">
             <DataAnnotationsValidator />
 
             <div class="accordion-item">
                 <div class="modal-header">
-                    <h1>Registro de Cliente</h1>
+                    <h1>Registro de Pago</h1>
                 </div>
 
                 <div class="accordion-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="ClienteId">ClienteId</label>
+                            <label for="PagoId">id</label>
                             <div class="input-group">
-                                <InputNumber type="number" @bind-Value="cliente.ClienteId" class="form-control" />
+                                <InputNumber type="number" @bind-Value="pago.PagoId" class="form-control" />
                                 <button type="button" class="btn btn-outline-primary" @onclick="Buscar"><span
                                         class="oi oi-magnifying-glass"></span></button>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <label for="Fecha" class="form-label">Fecha</label>
-                            <InputDate @bind-Value="cliente.Fecha" class="form-control" id="Modelo" />
+                            <InputDate @bind-Value="pago.Fecha" class="form-control" id="Modelo" />
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="Nombre" class="form-label">Nombre</label>
-                            <InputText type="text" @bind-Value="cliente.Nombre" class="form-control" id="Modelo" />
-                            <ValidationMessage For="@(() => cliente.Nombre)" />
+                            <label for="select" class="form-label">Monto a pagar del cliente</label>
+                            <InputSelect class="form-select" @bind-Value="pago.clienteId">
+                                @foreach (Cliente item in clienteBLL.GetList(o => true))
+                                {
+                                    <option value="@item.ClienteId">@item.ClienteId @item.Nombre @item.Apellido
+                                        ($@item.balance)</option>
+                                }
+                            </InputSelect>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="select" class="form-label">VentaId</label>
+                            <InputSelect class="form-select" @bind-Value="pago.ventaId">
+                                @foreach (Venta item in ventaBLL.GetList(o => true))
+                                {
+                                    <option value="@item.VentaId">@item.VentaId @item.Concepto</option>
+                                }
+                            </InputSelect>
                         </div>
 
-                        <div class="col-md-6">
-                            <label for="Apellido">Apellido</label>
-                            <InputText type="text" @bind-Value="cliente.Apellido" class="form-control" />
-                            <ValidationMessage For="@(() => cliente.Apellido)" />
-                        </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="CorreoElectronico">Correo Electronico</label>
-                            <InputText type="text" @bind-Value="cliente.CorreoElectronico" class="form-control" />
-                            <ValidationMessage For="@(() => cliente.CorreoElectronico)" />
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="Telefono">Telefono</label>
-                            <InputText type="text" @bind-Value="cliente.Telefono" class="form-control" />
-                            <ValidationMessage For="@(() => cliente.Telefono)" />
-                        </div>
+                    <div class="col-md-6">
+                        <label for="Concepto" class="form-label">Concepto</label>
+                        <InputText @bind-Value="pago.Concepto" class="form-control" id="Modelo" />
                     </div>
-
                 </div>
 
                 @*Botones*@
@@ -92,25 +89,25 @@
 </AuthorizeView>
 @code {
     [Parameter]
-    public int clienteId { get; set; }
+    public int pagoId { get; set; }
 
-    public Cliente cliente { get; set; } = new Cliente();
+    public Pago pago { get; set; } = new Pago();
 
     protected override void OnInitialized()
     {
-        if (clienteId > 0)
+        if (pagoId > 0)
         {
-            this.cliente.ClienteId = clienteId;
+            this.pago.PagoId = pagoId;
             this.Buscar();
         }
     }
     private void Buscar()
     {
-        var encontrado = clienteBLL.Buscar(cliente.ClienteId);
+        var encontrado = pagoBLL.Buscar(pago.PagoId);
 
         if (encontrado != null)
         {
-            cliente = encontrado;
+            pago = encontrado;
             ShowNotification(
             new NotificationMessage
                 {
@@ -132,14 +129,14 @@
 
     public void Nuevo()
     {
-        this.cliente = new Cliente();
+        this.pago = new Pago();
     }
 
     public void Guardar()
     {
-        if (ValidateCliente())
+        if (Validate())
         {
-            var guardado = clienteBLL.Guardar(cliente);
+            var guardado = pagoBLL.Guardar(pago);
 
             if (guardado)
             {
@@ -166,7 +163,7 @@
 
     public void Eliminar()
     {
-        if (clienteBLL.Eliminar(cliente))
+        if (pagoBLL.Eliminar(pago))
         {
             ShowNotification(
             new NotificationMessage
@@ -188,12 +185,12 @@
         }
     }
 
-    public bool ValidateCliente()
+    public bool Validate()
     {
         var validationResults = new List<ValidationResult>();
-        var validationContext = new ValidationContext(cliente);
+        var validationContext = new ValidationContext(pago);
 
-        if (!Validator.TryValidateObject(cliente, validationContext, validationResults, true))
+        if (!Validator.TryValidateObject(pago, validationContext, validationResults, true))
         {
             foreach (var validationResult in validationResults)
             {

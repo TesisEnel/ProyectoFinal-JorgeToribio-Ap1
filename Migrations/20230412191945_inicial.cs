@@ -46,11 +46,27 @@ namespace ProyectoFinal.Migrations
                     Nombre = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
                     Apellido = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
                     CorreoElectronico = table.Column<string>(type: "TEXT", nullable: false),
-                    Telefono = table.Column<string>(type: "TEXT", nullable: false)
+                    Telefono = table.Column<string>(type: "TEXT", nullable: false),
+                    balance = table.Column<double>(type: "REAL", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Cliente", x => x.ClienteId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Pago",
+                columns: table => new
+                {
+                    PagoId = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    clienteId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Fecha = table.Column<DateOnly>(type: "TEXT", nullable: false),
+                    Concepto = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Pago", x => x.PagoId);
                 });
 
             migrationBuilder.CreateTable(
@@ -111,6 +127,9 @@ namespace ProyectoFinal.Migrations
 
             migrationBuilder.DropTable(
                 name: "Cliente");
+
+            migrationBuilder.DropTable(
+                name: "Pago");
 
             migrationBuilder.DropTable(
                 name: "VentaDetalle");
