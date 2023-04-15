@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ProyectoFinal.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20230412191945_inicial")]
+    [Migration("20230415192427_inicial")]
     partial class inicial
     {
         /// <inheritdoc />
@@ -126,6 +126,9 @@ namespace ProyectoFinal.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<int>("clienteId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ventaId")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("PagoId");

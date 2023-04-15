@@ -125,6 +125,9 @@ namespace ProyectoFinal.Migrations
                     b.Property<int>("clienteId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("ventaId")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("PagoId");
 
                     b.ToTable("Pago");

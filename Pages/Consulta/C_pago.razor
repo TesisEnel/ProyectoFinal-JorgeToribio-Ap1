@@ -1,0 +1,116 @@
+@page "/c_pago"
+@inject PagoBLL pagoBLL;
+
+ <AuthorizeView Context="Context">
+    <Authorized>  
+
+
+<EditForm Model="lista">
+    <DataAnnotationsValidator />
+    <div class="card">
+        <div class="card-header">
+            <h1>Consulta de pagos</h1>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-2">
+                    <label>Criterio</label>
+                    <input type="text" class="form-control" @bind="Criterio" />
+                </div>
+                <div class="col-2">                    
+                    <label class="form-label">Filtro</label>
+                    <div class = "input-group">
+                    <select class="form-control" @bind="Filtro">
+                        <option value="1">PagoId</option>
+                        <option value="2">ClienteId</option>
+                        <option value="3">VentaId</option>
+                        <option value="4">Concepto</option>
+                    </select>
+                    <button type="button" class="btn btn-outline-primary" @onclick="Buscar"><i class="oi oi-magnifying-glass" /></button>  
+                </div>
+                </div>
+            </div>
+                <div class="row">
+
+                     <div class="Form-group col-2" >
+                        <span class="form-group ">Desde</span>
+                        <InputDate @bind-Value="FechaInicial" class="form-control" />
+                    </div>
+
+
+                    <div class="Form-group col-2" >
+                        <span class="form-group">Hasta</span>
+                        <InputDate @bind-Value="FechaFinal" class="form-control"/>
+                    </div>
+                </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>PagoId</th>
+                    <th>ClienteId</th>
+                    <th>VentaId</th>
+                    <th>Concepto</th>     
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in lista)
+                {
+                    <tr>
+                        <td>@item.PagoId</td>  
+                        <td>@item.clienteId</td>  
+                        <td>@item.ventaId</td>   
+                        <td>@item.Concepto</td>   
+                        <td><a href="pago/@item.PagoId">Ver</a></td>
+                   </tr>                   
+                }  
+            </tbody>
+        </table>
+    </div>
+</EditForm>
+
+
+    </Authorized>
+        <NotAuthorized>
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <h1 class="text">Inicio de sesión</h1>
+                    <p>Para acceder a esta página, es necesario iniciar sesión con una cuenta autorizada.</p>
+                    <a href="Identity/Account/Login"><button class="btn btn-primary">Iniciar sesión</button></a>
+                </div>
+            </div>
+        </div>
+    </NotAuthorized>
+</AuthorizeView>
+
+@code
+{
+    public string Criterio { get; set; } = "";
+    public string Filtro { get; set; } = "";
+    public List<Pago> lista { get; set; } = new List<Pago>();
+    public DateOnly? FechaInicial { get; set; } = new DateOnly(2010,4,12);
+    public DateOnly? FechaFinal { get; set; } = DateOnly.FromDateTime(DateTime.Now);
+    protected override void OnInitialized()
+    {
+        Buscar();
+    }
+
+    public void Buscar()
+    {
+        switch (Filtro)
+        {
+            case "1":
+                lista = pagoBLL.GetList(o => o.PagoId.ToString().Contains(Criterio.ToLower())); break;
+            case "2":
+                lista = pagoBLL.GetList(o => o.clienteId.ToString().Contains(Criterio.ToLower())); break;
+            case "3":
+                lista = pagoBLL.GetList(o => o.ventaId.ToString().Contains(Criterio.ToLower())); break;
+            case "4":
+                lista = pagoBLL.GetList(p => p.Concepto!.ToLower().Contains(Criterio.ToLower())); break;
+            default:
+                 lista = pagoBLL.GetList(o => o.Fecha >= FechaInicial && o.Fecha <= FechaFinal);
+                    break;        
+        }
+    }
+}

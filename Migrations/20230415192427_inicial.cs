@@ -61,6 +61,7 @@ namespace ProyectoFinal.Migrations
                     PagoId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     clienteId = table.Column<int>(type: "INTEGER", nullable: false),
+                    ventaId = table.Column<int>(type: "INTEGER", nullable: false),
                     Fecha = table.Column<DateOnly>(type: "TEXT", nullable: false),
                     Concepto = table.Column<string>(type: "TEXT", nullable: true)
                 },
